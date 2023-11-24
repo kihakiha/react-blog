@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { IBuildEnv, IBuildPaths } from './config/build/types/config';
 
-export default (env: IBuildEnv) => {
+export default (env: IBuildEnv): webpack.Configuration => {
   const paths: IBuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     build: path.resolve(__dirname, 'build'),

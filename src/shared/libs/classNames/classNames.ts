@@ -5,7 +5,7 @@ export function cn(cls: string, mods: TMods = {}, additional: string[] = []): st
     cls,
     ...additional.filter(Boolean),
     ...Object.entries(mods)
-      .filter(([key, value]) => Boolean(value))
+      .filter(([_, value]) => Boolean(value))
       .map(([key]) => key),
   ].join(' ');
 }

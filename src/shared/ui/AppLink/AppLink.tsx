@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import React, { type PropsWithChildren } from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
-import { Link, LinkProps } from 'react-router-dom';
+import { Link, type LinkProps } from 'react-router-dom';
 import styles from './AppLink.module.scss';
 
 export enum EAppLinkTheme {
@@ -14,7 +14,9 @@ interface IAppLinkProps extends LinkProps {
   theme?: EAppLinkTheme;
 }
 export const AppLink: React.FC<PropsWithChildren<IAppLinkProps>> = (props) => {
-  const { to, className, children, theme = EAppLinkTheme.PRIMARY, ...otherProps } = props;
+  const {
+    to, className = '', children, theme = EAppLinkTheme.PRIMARY, ...otherProps
+  } = props;
 
   return (
     <Link to={to} className={cn(styles.AppLink, {}, [className, styles[theme]])} {...otherProps}>
