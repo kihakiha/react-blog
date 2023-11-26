@@ -1,3 +1,4 @@
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,9 +12,11 @@ if (rootEl != null) {
 
   root.render(
     <BrowserRouter>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
     </BrowserRouter>,
   );
 }
