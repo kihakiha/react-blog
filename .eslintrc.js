@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
   },
   ignorePatterns: ['.eslintrc.js'],
-  extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript'],
+  extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'plugin:i18next/recommended'],
   overrides: [
     {
       env: {
@@ -21,7 +21,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/react-in-jsx-scope': 'off',
@@ -29,7 +29,6 @@ module.exports = {
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/member-delimiter-style': 'off',
-    'no-unused-vars': 'warn',
     '@typescript-eslint/space-before-function-paren': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -42,6 +41,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-unused-vars': 'off',
     'no-underscore-dangle': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
