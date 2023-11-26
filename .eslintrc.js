@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   ignorePatterns: ['.eslintrc.js'],
   extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'plugin:i18next/recommended'],
@@ -42,6 +43,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'max-len': ['erroe', {ignoreComments: true}],
   },
   globals: {
     __IS_DEV__: true,
