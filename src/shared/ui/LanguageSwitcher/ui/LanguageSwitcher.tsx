@@ -7,7 +7,9 @@ import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 interface ILanguageSwitcherProps {
   className: string;
 }
-export const LanguageSwitcher: React.FC = ({ className }: ILanguageSwitcherProps) => {
+export const LanguageSwitcher: React.FC = (
+  { className }: ILanguageSwitcherProps
+) => {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = async (): Promise<void> => {

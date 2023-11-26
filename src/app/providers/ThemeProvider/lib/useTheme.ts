@@ -7,11 +7,13 @@ interface IUseThemeResult {
 }
 
 export function useTheme(): IUseThemeResult {
-  const { theme, setTheme } = React.useContext(ThemeContext);
+  const { theme = EnumTheme.LIGHT, setTheme } = React.useContext(ThemeContext);
 
   const toggleTheme = (): void => {
     const newTheme = theme === EnumTheme.DARK ? EnumTheme.LIGHT : EnumTheme.DARK;
-    setTheme(newTheme);
+    if (setTheme) {
+      setTheme(newTheme);
+    }
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 

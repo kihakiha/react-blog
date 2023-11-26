@@ -19,7 +19,6 @@ export const Navbar: React.FC = ({ className }: INavbarProps) => {
       </AppLink>
       <AppLink theme={EAppLinkTheme.SECONDARY} to="/about">
         {t('О нас')}
-        {t('тест плагина')}
       </AppLink>
     </nav>
   );

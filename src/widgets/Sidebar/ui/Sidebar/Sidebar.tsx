@@ -20,7 +20,13 @@ export const Sidebar: React.FC = ({ className }: ISidebarProps) => {
   };
 
   return (
-    <aside className={cn(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}>
+    <aside
+      className={cn(
+        styles.Sidebar,
+        { [styles.collapsed]: collapsed },
+        [className]
+      )}
+    >
       <button type="button" onClick={onToggle}>
         {t('Свернуть')}
       </button>

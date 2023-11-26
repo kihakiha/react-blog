@@ -11,14 +11,14 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme: EButtonTheme;
 }
-export const Button: React.FC<PropsWithChildren<IButtonProps>> = (props) => {
+export const Button: React.FC<PropsWithChildren <IButtonProps> > = (props) => {
   const {
-    className, children, theme, ...otherProps
+    className = '', children, theme, ...otherProps
   } = props;
   return (
     <button
       type="button"
-      className={cn(styles.Button, {}, [className, styles[theme]])}
+      className={cn(styles.Button, { [styles[theme]]: true }, [className])}
       {...otherProps}
     >
       {children}
