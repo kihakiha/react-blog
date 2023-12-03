@@ -10,7 +10,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    
     // Для абсолютного импорта
     "baseUrl": ".",
     "paths": {
@@ -21,5 +20,14 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.jsx",
+    "./src/**/*.js",
+    "config",
+    "./config/jest/setupTest.ts",
+    "./*.ts"
+  ],
 }

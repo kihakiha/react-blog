@@ -1,4 +1,4 @@
-import { cn } from './classNames';
+import { cn } from 'shared/libs/classNames/classNames';
 
 describe('classNames', () => {
   test('without params', () => {

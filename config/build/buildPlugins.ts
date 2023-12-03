@@ -1,7 +1,8 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpack from 'webpack'
-import { type IBuildOptions } from './types/config'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { type IBuildOptions } from './types/config';
 
 export function buildPlugins ({ paths, isDev }: IBuildOptions): webpack.WebpackPluginInstance[] {
   return [
@@ -16,6 +17,9 @@ export function buildPlugins ({ paths, isDev }: IBuildOptions): webpack.WebpackP
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    })
   ]
 }

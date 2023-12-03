@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -18,6 +19,9 @@ module.exports = {
     },
   ],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
@@ -42,7 +46,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-unused-vars': 'off',
     'no-underscore-dangle': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
+    'linebreak-style': 'off',
   },
   globals: {
     __IS_DEV__: true,

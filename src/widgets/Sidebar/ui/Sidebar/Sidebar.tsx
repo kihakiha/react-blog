@@ -11,7 +11,7 @@ interface ISidebarProps {
 }
 
 export const Sidebar: React.FC = ({ className }: ISidebarProps) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const [collapsed, setCollapsed] = React.useState(false);
 
@@ -21,13 +21,10 @@ export const Sidebar: React.FC = ({ className }: ISidebarProps) => {
 
   return (
     <aside
-      className={cn(
-        styles.Sidebar,
-        { [styles.collapsed]: collapsed },
-        [className]
-      )}
+      data-testid="sidebar"
+      className={cn(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
     >
-      <button type="button" onClick={onToggle}>
+      <button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
         {t('Свернуть')}
       </button>
       <div className={styles.switchers}>

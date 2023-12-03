@@ -1,4 +1,5 @@
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
 
@@ -21,9 +22,18 @@ const config: Config = {
     'node'
   ],
   rootDir: '../../',
+  modulePaths: [
+    '<rootDir>src'
+  ],
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+  },
+
 };
 
 export default config;
