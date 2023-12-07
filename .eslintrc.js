@@ -6,7 +6,14 @@ module.exports = {
     jest: true,
   },
   ignorePatterns: ['.eslintrc.js'],
-  extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'plugin:i18next/recommended'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'airbnb-typescript',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
+    'plugin:storybook/recommended',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -35,7 +42,13 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-unused-vars': 'off',
     'no-underscore-dangle': 'off',
-    'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+    'i18next/no-literal-string': [
+      'warn',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to'],
+      },
+    ],
     'linebreak-style': 'off',
   },
   globals: {
@@ -45,8 +58,13 @@ module.exports = {
     {
       files: ['**/src/**/*.test.{ts,tsx}'],
       rules: {
-        'i18next/no-literal-string': 'off'
+        'i18next/no-literal-string': 'off',
+      },
+    },
+    {
+      "files": ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+      "rules": {
       }
     }
-  ]
+  ],
 };

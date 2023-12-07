@@ -28,6 +28,8 @@
     "./src/**/*.js",
     "config",
     "./config/jest/setupTest.ts",
-    "./*.ts"
+    "./*.ts",
+    "config/.storybook/*.ts",
+    "config/.storybook/*.tsx"
   ],
 }

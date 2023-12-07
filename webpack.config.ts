@@ -10,7 +10,6 @@ export default (env: IBuildEnv): webpack.Configuration => {
     html: path.resolve(__dirname, 'public', 'index.html'),
     src: path.resolve(__dirname, 'src'),
   };
-
   const mode = env.mode || 'development';
   const port = env.port || 3000;
 

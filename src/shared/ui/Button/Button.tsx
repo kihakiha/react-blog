@@ -5,6 +5,7 @@ import styles from './Button.module.scss';
 
 export enum EButtonTheme {
   CLEAR = 'clear',
+  OUTLINE = 'outline',
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,7 +14,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export const Button: React.FC<PropsWithChildren<IButtonProps>> = (props) => {
   const {
-    className = '', children, theme, ...otherProps
+    className = '', children, theme = '', ...otherProps
   } = props;
   return (
     <button
@@ -21,7 +22,7 @@ export const Button: React.FC<PropsWithChildren<IButtonProps>> = (props) => {
       className={cn(
         styles.Button,
         {
-          [styles[theme || 0]]: true,
+          [styles[theme]]: true,
         },
         [className],
       )}
