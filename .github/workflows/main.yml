@@ -18,17 +18,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{matrix.node-version}}
-      - name: install modules
+      - name: Install modules
         run: npm install
-      - name: build production project
+      - name: Build production project
         run: npm run build:prod
-      - name: linting typescript
+      - name: Linting typescript
         run: npm run lint:ts
-      - name: linting css
+      - name: Linting css
         run: npm run lint:scss
-      - name: test unit
+      - name: Test unit
         run: npm run test:unit
-      - name: build Storybook
+      - name: Build Storybook
         run: npm run storybook:build
       - name: Screenshot tests
         run: npm run test:ui:ci
