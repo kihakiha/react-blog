@@ -30,6 +30,7 @@
     "./config/jest/setupTest.ts",
     "./*.ts",
     "config/.storybook/*.ts",
-    "config/.storybook/*.tsx"
+    "config/.storybook/*.tsx",
+    "scripts"
   ],
 }
