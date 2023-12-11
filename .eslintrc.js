@@ -44,6 +44,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'no-param-reassign': 'off',
     'i18next/no-literal-string': [
       'warn',
       {
