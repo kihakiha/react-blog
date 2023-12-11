@@ -21,12 +21,10 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
 
   const [isClosing, setIsClosing] = React.useState(false);
   const timerRef = React.useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
-    [styles[theme]]: true,
   }
 
   const onCloseHandler = React.useCallback(() => {

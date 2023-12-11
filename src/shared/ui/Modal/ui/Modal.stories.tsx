@@ -26,7 +26,6 @@ export const Modal_Component_Dark: Story = {
   args: {
     children: 'Modal',
     isOpen: true,
-
   },
 }
 Modal_Component_Dark.decorators = [ThemeDecorator(EnumTheme.DARK)]
