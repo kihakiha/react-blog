@@ -3,11 +3,15 @@
 @import 'themes/light';
 @import 'themes/dark';
 
-.app {
+body {
   font: var(--font-m);
-  background-color: var(--bg-color);
   color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+.app {
   min-height: 100vh;
+  background-color: var(--bg-color);
 }
 
 .content-page {
@@ -18,8 +22,3 @@
   flex-grow: 1;
   padding: 30px;
 }
-
-/* #storybook-root {
-  color: red;
-  background-color: red;
-} */

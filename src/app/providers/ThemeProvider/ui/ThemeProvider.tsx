@@ -3,8 +3,14 @@ import { EnumTheme, LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../lib/ThemeCo
 
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as EnumTheme) || EnumTheme.LIGHT
 
-const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = React.useState<EnumTheme>(defaultTheme)
+interface IThemeProviderProps {
+  initialTheme?: EnumTheme
+}
+
+const ThemeProvider: React.FC<PropsWithChildren<IThemeProviderProps>> = (props) => {
+  const { children, initialTheme = EnumTheme.LIGHT } = props
+
+  const [theme, setTheme] = React.useState<EnumTheme>(initialTheme || defaultTheme)
 
   const defaultProps = React.useMemo(
     () => ({
