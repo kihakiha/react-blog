@@ -31,6 +31,7 @@
     "./*.ts",
     "config/.storybook/*.ts",
     "config/.storybook/*.tsx",
-    "scripts"
+    "scripts",
+    "json-server"
   ],
 }

@@ -14,6 +14,13 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:storybook/recommended',
   ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
