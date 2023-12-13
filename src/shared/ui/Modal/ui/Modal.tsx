@@ -8,19 +8,33 @@ import styles from './Modal.module.scss';
 interface IModalProps {
   className?: string;
   children?: React.ReactNode;
-  isOpen?: boolean;
-  onClose?: () => void;
+  isOpen: boolean;
+  onClose: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_REF = 300;
 
 export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => {
   const {
-    className = '', children, isOpen = false, onClose
+    className = '',
+    children,
+    isOpen = false,
+    onClose,
+    lazy
   } = props;
 
   const [isClosing, setIsClosing] = React.useState(false);
+
   const timerRef = React.useRef<ReturnType<typeof setTimeout>>();
+
+  const [isMounted, setIsMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen]);
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
@@ -57,6 +71,10 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [isOpen, onKeyDown])
+
+  if (lazy && !isMounted) {
+    return null
+  }
 
   return (
     <Portal>
