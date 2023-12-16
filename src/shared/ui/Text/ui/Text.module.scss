@@ -1,0 +1,19 @@
+.Title {
+  font: var(--font-l);
+  color: var(--primary-color);
+}
+
+.Text {
+  font: var(--font-m);
+  color: var(--secondary-color);
+}
+
+.error {
+  .Title {
+    color: var(--error-color-light);
+  }
+  
+  .Text {
+    color: var(--error-color);
+  }
+}

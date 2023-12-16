@@ -8,5 +8,10 @@
   "Страница не найдена": "Not Found :d",
   "Произошла непредвиденная ошибка": "There was an unexpected error",
   "Обновить страницу": "Refresh page",
-  "Войти": "Login"
+  "Войти": "Login",
+  "Авторизация": "Authorization",
+  "Неверный логин или пароль": "Invalid login or password",
+  "Логин": "Username",
+  "Пароль": "Password",
+  "Выйти": "Logout"
 }

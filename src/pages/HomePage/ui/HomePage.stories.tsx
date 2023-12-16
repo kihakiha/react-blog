@@ -3,7 +3,7 @@ import React from 'react'
 import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
 import { EnumTheme } from 'app/providers/ThemeProvider';
 
-import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import HomePage from './HomePage';
 
 const meta: Meta<typeof HomePage> = {
