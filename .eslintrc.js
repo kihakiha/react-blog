@@ -53,6 +53,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'no-param-reassign': 'off',
     'max-len': 'off',
+    'react/jsx-no-useless-fragment': 'off',
     'i18next/no-literal-string': [
       'warn',
       {
