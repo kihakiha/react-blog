@@ -7,14 +7,14 @@ import { Input } from 'shared/ui/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { ETextTheme } from 'shared/ui/Text/ui/Text';
 import { Text } from 'shared/ui/Text';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername';
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
-import { loginByUsername } from '../../model/services/LoginByUsername';
-import { loginAction, loginReducer } from '../../model/slice/LoginSlice';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import styles from './LoginForm.module.scss';
+import { loginAction, loginReducer } from '../../model/slice/LoginSlice';
+import { loginByUsername } from '../../model/services/LoginByUsername';
 
 export interface ILoginFormProps {
   className?: string;
