@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 
 interface ILanguageSwitcherProps {
-  className: string;
+  className?: string;
 }
-export const LanguageSwitcher: React.FC = (
+export const LanguageSwitcher = React.memo((
   { className }: ILanguageSwitcherProps
 ) => {
   const { t, i18n } = useTranslation();
@@ -27,4 +27,4 @@ export const LanguageSwitcher: React.FC = (
       </Button>
     </div>
   );
-};
+})

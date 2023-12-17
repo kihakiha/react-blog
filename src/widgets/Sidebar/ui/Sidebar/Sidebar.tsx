@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
-import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { Button, EButtonSize, EButtonTheme } from 'shared/ui/Button/Button';
-import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
-import HomeIcon from 'shared/assets/icons/home_icon.svg';
-import ListIcon from 'shared/assets/icons/list_icon.svg';
+import { SidebarItemsList } from '../../model/items';
 import styles from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface ISidebarProps {
-  className: string;
+  className?: string;
 }
 
-export const Sidebar: React.FC = ({ className }: ISidebarProps) => {
-  const { t } = useTranslation();
-
+export const Sidebar = memo(({ className }: ISidebarProps) => {
   const [collapsed, setCollapsed] = React.useState(false);
 
   const onToggle = (): void => {
     setCollapsed(!collapsed);
   };
+
+  const itemsList = React.useMemo(() => (SidebarItemsList.map((item) => (
+    <SidebarItem
+      item={item}
+      key={item.text}
+      collapsed={collapsed}
+    />
+  ))), [collapsed])
 
   return (
     <aside
@@ -30,27 +33,7 @@ export const Sidebar: React.FC = ({ className }: ISidebarProps) => {
       className={cn(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
     >
       <div className={styles.items}>
-        <AppLink
-          theme={EAppLinkTheme.SECONDARY}
-          to={RoutePaths.home}
-          className={styles.item}
-        >
-          <HomeIcon className={styles.icon} />
-          <span className={styles.link}>
-            {t('Главная')}
-          </span>
-        </AppLink>
-
-        <AppLink
-          theme={EAppLinkTheme.SECONDARY}
-          to={RoutePaths.about}
-          className={styles.item}
-        >
-          <ListIcon className={styles.icon} />
-          <span className={styles.link}>
-            {t('О нас')}
-          </span>
-        </AppLink>
+        {itemsList}
       </div>
       <Button
         className={styles.collapseBtn}
@@ -69,4 +52,4 @@ export const Sidebar: React.FC = ({ className }: ISidebarProps) => {
       </div>
     </aside>
   );
-};
+})

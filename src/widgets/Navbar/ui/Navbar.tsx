@@ -9,10 +9,10 @@ import { getUserAuthData, userAction } from 'entities/User';
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {
-  className: string;
+  className?: string;
 }
 
-export const Navbar: React.FC = ({ className }: INavbarProps) => {
+export const Navbar = React.memo(({ className }: INavbarProps) => {
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData)
   const dispatch = useDispatch()
@@ -64,4 +64,4 @@ export const Navbar: React.FC = ({ className }: INavbarProps) => {
       )}
     </nav>
   );
-};
+})

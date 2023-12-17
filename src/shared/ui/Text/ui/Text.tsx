@@ -14,7 +14,7 @@ interface ITextProps {
   text?: string;
   theme?: ETextTheme;
 }
-export const Text = (props: ITextProps) => {
+export const Text = React.memo((props: ITextProps) => {
   const {
     text = '',
     title = '',
@@ -27,4 +27,4 @@ export const Text = (props: ITextProps) => {
       {text && <p className={styles.Text}>{text}</p>}
     </div>
   );
-};
+});

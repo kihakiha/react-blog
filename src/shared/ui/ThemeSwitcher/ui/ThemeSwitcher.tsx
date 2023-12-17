@@ -9,9 +9,9 @@ import { Button, EButtonTheme } from 'shared/ui/Button/Button'
 import styles from './ThemeSwitcher.module.scss'
 
 interface IThemeSwitcherProps {
-  className: string
+  className?: string
 }
-export const ThemeSwitcher: React.FC = ({ className }: IThemeSwitcherProps) => {
+export const ThemeSwitcher = React.memo(({ className }: IThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -23,4 +23,4 @@ export const ThemeSwitcher: React.FC = ({ className }: IThemeSwitcherProps) => {
       {theme === EnumTheme.LIGHT ? <LightThemeIcon /> : <DarkThemeIcon />}
     </Button>
   )
-}
+})

@@ -3,17 +3,20 @@ import { AboutPage } from 'pages/AboutPage'
 import { HomePage } from 'pages/HomePage'
 import { NotFoundPage } from 'pages/NotFoundPage'
 import { type RouteProps } from 'react-router-dom'
+import { ProfilePage } from 'pages/ProfilePage'
 
 export enum EAppRoutes {
   HOME = 'home',
   ABOUT = 'about',
-  NOT_FOUND = 'not_found'
+  PROFILE = 'profile',
+  NOT_FOUND = 'not_found',
 }
 
 export const RoutePaths: Record<EAppRoutes, string> = {
   [EAppRoutes.HOME]: '/',
   [EAppRoutes.ABOUT]: '/about',
-  [EAppRoutes.NOT_FOUND]: '*'
+  [EAppRoutes.PROFILE]: '/profile',
+  [EAppRoutes.NOT_FOUND]: '*',
 }
 
 export const RouteConfig: Record<EAppRoutes, RouteProps> = {
@@ -28,5 +31,9 @@ export const RouteConfig: Record<EAppRoutes, RouteProps> = {
   [EAppRoutes.NOT_FOUND]: {
     path: RoutePaths.not_found,
     element: <NotFoundPage />
+  },
+  [EAppRoutes.PROFILE]: {
+    path: RoutePaths.profile,
+    element: <ProfilePage />
   }
 }
