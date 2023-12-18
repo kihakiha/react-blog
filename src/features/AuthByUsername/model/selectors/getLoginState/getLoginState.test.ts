@@ -3,7 +3,7 @@ import { getLoginState } from './getLoginState'
 
 describe('getLoginState.test', () => {
   test('Should return state', () => {
-    const state: Partial<StateSchema> = {
+    const state: DeepPartial<StateSchema> = {
       loginForm: {
         username: '',
         password: '',
@@ -18,7 +18,7 @@ describe('getLoginState.test', () => {
   })
 
   test('Should return undefined with empty state', () => {
-    const state: Partial<StateSchema> = {}
+    const state: DeepPartial<StateSchema> = {}
     expect(getLoginState(state as StateSchema)).toEqual(undefined)
   })
 })

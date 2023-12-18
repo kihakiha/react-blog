@@ -5,9 +5,9 @@ import { Loader } from 'shared/ui/Loader';
 import styles from './PageLoader.module.scss';
 
 interface IPageLoaderProps {
-  className: string;
+  className?: string;
 }
-export const PageLoader: React.FC = ({ className }: IPageLoaderProps) => (
+export const PageLoader = ({ className }: IPageLoaderProps) => (
   <div className={cn(styles.PageLoader, {}, [className])}>
     <Loader />
   </div>

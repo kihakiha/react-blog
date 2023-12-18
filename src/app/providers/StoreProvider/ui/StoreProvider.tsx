@@ -7,8 +7,8 @@ import { StateSchema } from '../config/StateSchema';
 
 interface IStoreProviderProps {
   children?: ReactNode;
-  initialState?: Partial<StateSchema>;
-  asyncReducers?: Partial<ReducersMapObject<StateSchema>>;
+  initialState?: DeepPartial<StateSchema>;
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
 export const StoreProvider = (props: IStoreProviderProps) => {

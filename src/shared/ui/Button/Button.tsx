@@ -1,5 +1,5 @@
 import React, { type ButtonHTMLAttributes, type PropsWithChildren } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
+import { TMods, cn } from 'shared/libs/classNames/classNames';
 
 import styles from './Button.module.scss';
 
@@ -26,10 +26,16 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export const Button: React.FC<PropsWithChildren<IButtonProps>> = (props) => {
   const {
-    className = '', children, theme = '', square = '', size = '', disabled = false, ...otherProps
+    className = '',
+    children,
+    theme = EButtonTheme.OUTLINE,
+    square = '',
+    size = '',
+    disabled = false,
+    ...otherProps
   } = props;
 
-  const mods = {
+  const mods: TMods = {
     [styles[theme]]: true,
     [styles.square]: square,
     [styles[size]]: true,

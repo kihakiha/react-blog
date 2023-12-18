@@ -3,7 +3,7 @@ import { getCounter } from './getCounter'
 
 describe('getCounter', () => {
   test('Should return counter obj', () => {
-    const state: Partial<StateSchema> = {
+    const state: DeepPartial<StateSchema> = {
       counter: { value: 10 }
     }
 

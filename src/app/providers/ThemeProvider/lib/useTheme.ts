@@ -10,11 +10,6 @@ export function useTheme(): IUseThemeResult {
   const { theme = EnumTheme.LIGHT, setTheme } = React.useContext(ThemeContext);
 
   const toggleTheme = (): void => {
-    // const newTheme = theme === EnumTheme.DARK ? EnumTheme.LIGHT : EnumTheme.DARK;
-    // if (setTheme) {
-    //   setTheme(newTheme);
-    // }
-
     let newTheme: EnumTheme;
     switch (theme) {
       case EnumTheme.DARK:

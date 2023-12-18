@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next';
 import styles from './PageError.module.scss';
 
 interface IPageErrorProps {
-  className: string;
+  className?: string;
 }
-export const PageError: React.FC = ({ className }: IPageErrorProps) => {
+export const PageError = ({ className }: IPageErrorProps) => {
   const { t } = useTranslation();
 
   const refreshPage = () => {

@@ -6,7 +6,7 @@ import styles from './Input.module.scss';
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface IInputProps extends HTMLInputProps {
-  className: string;
+  className?: string;
   value?: string;
   onChange?: (value: string) => void;
   autofocus?: boolean;

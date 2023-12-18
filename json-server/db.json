@@ -23,11 +23,6 @@
       "id": "1",
       "username": "admin",
       "password": "123"
-    },
-    {
-      "id": "2",
-      "username": "admin1",
-      "password": "123456"
     }
   ],
   "profile": {

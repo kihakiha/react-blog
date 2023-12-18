@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import styles from './NotFoundPage.module.scss';
 
 interface INotFoundPageProps {
-  className: string;
+  className?: string;
 }
-export const NotFoundPage: React.FC = ({ className }: INotFoundPageProps) => {
+export const NotFoundPage = ({ className }: INotFoundPageProps) => {
   const { t } = useTranslation();
 
   return (

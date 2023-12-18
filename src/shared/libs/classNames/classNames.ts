@@ -1,6 +1,6 @@
-type TMods = Record<string, boolean | string>;
+export type TMods = Record<string, boolean | string>;
 
-export function cn(cls: string, mods: TMods = {}, additional: string[] = []): string {
+export function cn(cls: string, mods: TMods = {}, additional: Array<string | undefined> = []): string {
   return [
     cls,
     ...Object.entries(mods)
