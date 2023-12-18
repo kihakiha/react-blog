@@ -12,6 +12,7 @@ export default (env: IBuildEnv): webpack.Configuration => {
   };
   const mode = env.mode || 'development';
   const port = env.port || 3000;
+  const apiUrl = env.apiUrl || 'http://localhost:8000'
 
   const isDev = mode === 'development';
 
@@ -20,6 +21,7 @@ export default (env: IBuildEnv): webpack.Configuration => {
     paths,
     isDev,
     port,
+    apiUrl
   });
 
   return config;
