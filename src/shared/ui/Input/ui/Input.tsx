@@ -1,15 +1,16 @@
 import React, { InputHTMLAttributes, PropsWithChildren, memo } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
+import { TMods, cn } from 'shared/libs/classNames/classNames';
 
 import styles from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface IInputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: IInputProps) => {
@@ -20,6 +21,7 @@ export const Input = memo((props: IInputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    readonly = false,
     ...otherProps
   } = props;
 
@@ -52,6 +54,13 @@ export const Input = memo((props: IInputProps) => {
   const onHandleSelect = (e: any) => {
     setCaretPosition(e?.target?.selectionStart || 0)
   }
+
+  const mods: TMods = {
+    [styles.readonly]: readonly
+  }
+
+  const isCaretVisible = isFocused && !readonly;
+
   return (
     <div className={cn(styles.InputWrapper, {}, [className])}>
       {placeholder && (
@@ -62,16 +71,17 @@ export const Input = memo((props: IInputProps) => {
       <div className={styles.caretWrapper}>
         <input
           ref={ref}
-          className={styles.input}
+          className={cn(styles.input, mods)}
           value={value}
           type={type}
           onChange={onHandleChange}
           onFocus={onHandleFocus}
           onBlur={onHandleBlur}
           onSelect={onHandleSelect}
+          readOnly={readonly}
           {...otherProps}
         />
-        {isFocused && (
+        {isCaretVisible && (
           <span
             className={styles.caret}
             style={{ left: `${caretPosition * 9}px` }}

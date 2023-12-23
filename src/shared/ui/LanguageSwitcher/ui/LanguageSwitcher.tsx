@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
+import { Button, EButtonTheme } from 'shared/ui/Button';
 
 interface ILanguageSwitcherProps {
   className?: string;

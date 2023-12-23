@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, Suspense } from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
-import { Modal } from 'shared/ui/Modal';
 import { Loader } from 'shared/ui/Loader';
+import { Modal } from 'shared/ui/Modal';
 import styles from './LoginModal.module.scss';
 import { LoginFormLazy } from '../LoginForm/LoginForm.lazy';
 

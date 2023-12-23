@@ -2,13 +2,13 @@ import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 
-import { Button, EButtonSize, EButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input';
 import { useSelector } from 'react-redux';
 import { ETextTheme } from 'shared/ui/Text/ui/Text';
 import { Text } from 'shared/ui/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
+import { Button, EButtonTheme, EButtonSize } from 'shared/ui/Button';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -63,6 +63,7 @@ const LoginForm = React.memo(({ className = '', onSuccess }: ILoginFormProps) =>
           className={styles.input}
           placeholder={t('Логин')}
           autofocus
+          readonly={false}
           onChange={onChangeUsername}
           value={username}
         />
@@ -71,6 +72,7 @@ const LoginForm = React.memo(({ className = '', onSuccess }: ILoginFormProps) =>
           className={styles.input}
           placeholder={t('Пароль')}
           onChange={onChangePassword}
+          readonly={false}
           value={password}
         />
         <Button

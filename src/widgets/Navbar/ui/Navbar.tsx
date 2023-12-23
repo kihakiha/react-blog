@@ -2,10 +2,10 @@ import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userAction } from 'entities/User';
+import { Button, EButtonTheme } from 'shared/ui/Button';
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {

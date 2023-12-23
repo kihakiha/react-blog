@@ -1,4 +1,15 @@
-export { IProfile, ProfileSchema } from './model/types/profile'
+import { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly'
+
+export { IProfile, ProfileSchema, ValidateProfileError } from './model/types/profile'
 export { profileAction, profileReducer } from './model/slice/ProfileSlice'
 export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData'
 export { ProfileCard } from './ui/ProfileCard/ProfileCard'
+
+export { getProfileData } from './model/selectors/getProfileData/getProfileData'
+export { getProfileError } from './model/selectors/getProfileError/getProfileError'
+export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading'
+export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly'
+export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm'
+export { getProfileValidateError } from './model/selectors/getProfileValidateError/getProfileValidateError'
+
+export { updateProfileData } from './model/services/UpdateProfileData/updateProfileData'

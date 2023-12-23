@@ -3,7 +3,7 @@ import { cn } from 'shared/libs/classNames/classNames';
 
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { Button, EButtonSize, EButtonTheme } from 'shared/ui/Button/Button';
+import { Button, EButtonTheme, EButtonSize } from 'shared/ui/Button';
 import { SidebarItemsList } from '../../model/items';
 import styles from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

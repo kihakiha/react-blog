@@ -34,6 +34,11 @@
   animation: blink 1s forwards infinite;
 }
 
+.readonly {
+  opacity: .7;
+  cursor: default;
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
