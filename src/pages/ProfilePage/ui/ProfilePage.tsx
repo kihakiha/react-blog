@@ -26,7 +26,7 @@ const reducers: ReducersList = {
 }
 
 const ProfilePage = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('profile')
 
   const dispatch = useAppDispatch();
 

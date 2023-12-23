@@ -36,7 +36,7 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
       <nav className={cn(styles.navbar, {}, [className])}>
         <Button
           type="button"
-          theme={EButtonTheme.CLEAR_INVERTED}
+          theme={EButtonTheme.CLEAR}
           className={styles.links}
           onClick={onLogout}
         >
@@ -50,7 +50,7 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
     <nav className={cn(styles.navbar, {}, [className])}>
       <Button
         type="button"
-        theme={EButtonTheme.CLEAR_INVERTED}
+        theme={EButtonTheme.CLEAR}
         className={styles.links}
         onClick={onShowModal}
       >

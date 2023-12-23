@@ -1,10 +1,10 @@
 import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
-import { t } from 'i18next';
 import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink';
+import { useTranslation } from 'react-i18next';
 import { ISidebarItem } from '../../model/items';
 import styles from './SidebarItem.module.scss';
 
@@ -14,6 +14,7 @@ interface ISidebarItemProps {
 }
 
 export const SidebarItem = ({ item, collapsed }: ISidebarItemProps) => {
+  const { t } = useTranslation('sidebar_items')
   const { text, Icon, path } = item;
 
   const isAuth = useSelector(getUserAuthData);

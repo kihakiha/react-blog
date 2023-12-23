@@ -1,0 +1,20 @@
+{
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Некорректный возраст": "Incorrect age",
+  "Данные не указаны": "Data was not provided",
+  "Серверная ошибка": "Server error",
+  "Профиль": "Profile",
+  "Отменить": "Cancel",
+  "Произошла ошибка при загрузке профиля": "An error occurred while loading a profile",
+  "Обновите страницу или попробуйте позже": "Refresh the page or try again later",
+  "Имя": "First name",
+  "Фамилия": "Last name",
+  "Возраст": "Age",
+  "Город": "City",
+  "Имя пользователя": "Username",
+  "Ссылка на аватар": "Url to avatar",
+  "Редактировать": "Edit profile",
+  "Валюта": "Currency",
+  "Страна": "Country",
+  "Подтвердить": "Sumbit changes"
+}

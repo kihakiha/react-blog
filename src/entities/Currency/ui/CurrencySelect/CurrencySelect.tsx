@@ -24,7 +24,7 @@ export const CurrencySelect = React.memo((props: ICurrencySelectProps) => {
     onChange,
     readonly
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
 
   const onChangeHandler = React.useCallback((changeValue: string) => {
     onChange?.(changeValue as ECurrency)

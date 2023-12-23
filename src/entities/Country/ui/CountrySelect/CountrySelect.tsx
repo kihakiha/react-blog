@@ -31,7 +31,7 @@ export const CountrySelect = React.memo((props: ICountrySelectProps) => {
     onChange,
     readonly
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
 
   const onChangeHandler = React.useCallback((changeValue: string) => {
     onChange?.(changeValue as ECountry)

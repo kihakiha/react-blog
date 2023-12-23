@@ -9,6 +9,7 @@ export enum EButtonTheme {
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
+  BACKGROUND_SECONDARY = 'backgroundSecondary',
 }
 
 export enum EButtonSize {
