@@ -14,12 +14,19 @@ export enum ETextAlign {
   CENTER = 'center',
 }
 
+export enum ETextSize {
+  XS = 'size_xs',
+  M = 'size_m',
+  L = 'size_l',
+}
+
 interface ITextProps {
   className?: string;
   title?: string;
   text?: string;
   theme?: ETextTheme;
   align?: ETextAlign;
+  size?: ETextSize;
 }
 export const Text = React.memo((props: ITextProps) => {
   const {
@@ -28,11 +35,13 @@ export const Text = React.memo((props: ITextProps) => {
     className = '',
     theme = ETextTheme.PRIMARY,
     align = ETextAlign.LEFT,
+    size = ETextSize.M,
   } = props;
 
   const mods: TMods = {
     [styles[theme]]: true,
     [styles[align]]: true,
+    [styles[size]]: true,
   }
   return (
     <div className={cn(styles.TextWrapper, mods, [className])}>

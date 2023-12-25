@@ -54,6 +54,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'max-len': 'off',
     'react/jsx-no-useless-fragment': 'off',
+    'react/no-array-index-key': 'off',
     'i18next/no-literal-string': [
       'warn',
       {

@@ -31,3 +31,33 @@
 .center {
   text-align: center;
 }
+
+.size_xs {
+  .Title {
+    font: var(--font-m)
+  }
+
+  .Text {
+    font: var(--font-xs)
+  }
+}
+
+.size_m {
+  .Title {
+    font: var(--font-l);
+  }
+
+  .Text {
+    font: var(--font-m);
+  }
+}
+
+.size_l {
+  .Title {
+    font: var(--font-xl);
+  }
+
+  .Text {
+    font: var(--font-l);
+  }
+}

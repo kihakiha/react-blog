@@ -5,7 +5,7 @@ import { EnumTheme } from 'app/providers/ThemeProvider';
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ETextTheme, Text } from './Text';
+import { ETextSize, ETextTheme, Text } from './Text';
 
 const meta: Meta<typeof Text> = {
   title: 'shared/Text',
@@ -72,3 +72,30 @@ export const Text_Error_Dark: Story = {
   },
 }
 Text_Error_Dark.decorators = [ThemeDecorator(EnumTheme.DARK)]
+
+export const Size_XS: Story = {
+  args: {
+    title: 'Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas, iste illo dolor eligendi ab.',
+    theme: ETextTheme.ERROR,
+    size: ETextSize.XS
+  },
+}
+
+export const Size_M: Story = {
+  args: {
+    title: 'Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas, iste illo dolor eligendi ab.',
+    theme: ETextTheme.ERROR,
+    size: ETextSize.M
+  },
+}
+
+export const Size_L: Story = {
+  args: {
+    title: 'Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas, iste illo dolor eligendi ab.',
+    theme: ETextTheme.ERROR,
+    size: ETextSize.L
+  },
+}
