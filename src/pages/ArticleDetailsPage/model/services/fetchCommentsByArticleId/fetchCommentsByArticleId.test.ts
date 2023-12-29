@@ -1,23 +1,37 @@
 import axios from 'axios'
-import { userAction } from 'entities/User'
 import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk'
-import { ECountry } from 'entities/Country'
-import { ECurrency } from 'entities/Currency'
-import { fetchProfileData } from './fetchProfileData'
+import { fetchCommentsByArticleId } from './fetchCommentsByArticleId'
 
-const data = {
-  username: 'Jest',
-  firstName: 'Jest',
-  lastName: 'Test',
-  age: 2,
-  city: 'San Francisco',
-  country: ECountry.USA,
-  currency: ECurrency.USD,
-}
+const data = [
+  {
+    id: '1',
+    text: 'some comment',
+    articleId: '1',
+    userId: '1'
+  },
+  {
+    id: '2',
+    text: 'some comment 2',
+    articleId: '1',
+    userId: '2'
+  },
+  {
+    id: '1',
+    text: 'some comment',
+    articleId: '2',
+    userId: '1'
+  },
+  {
+    id: '2',
+    text: 'some comment 2',
+    articleId: '2',
+    userId: '2'
+  }
+]
 
-describe('FetchProfileData.test', () => {
+describe('fetchCommentsByArticleId.test', () => {
   test('Success', async () => {
-    const thunk = new TestAsyncThunk(fetchProfileData)
+    const thunk = new TestAsyncThunk(fetchCommentsByArticleId)
 
     thunk.api.get.mockReturnValue(Promise.resolve({ data }))
 
@@ -29,7 +43,7 @@ describe('FetchProfileData.test', () => {
   })
 
   test('Rejected with 403 status code', async () => {
-    const thunk = new TestAsyncThunk(fetchProfileData)
+    const thunk = new TestAsyncThunk(fetchCommentsByArticleId)
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }))
 
     const result = await thunk.callThunk('1')

@@ -1,8 +1,5 @@
 import React from 'react'
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-
 import { Meta, StoryObj } from '@storybook/react';
 
 import { IArticle } from 'entities/Article';
@@ -18,7 +15,7 @@ const meta: Meta<typeof ArticleDetailsPage> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPage>;
 
-const article: IArticle = {
+const articleData: IArticle = {
   id: '1',
   title: 'Javascript news СВЕЖАЯ',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -91,12 +88,11 @@ const article: IArticle = {
 }
 
 export const Primary: Story = {
-  args: {
-  },
+  args: {},
 }
 
 Primary.decorators = [StoreDecorator({
   articleDetails: {
-    data: article
-  }
+    data: articleData
+  },
 })]

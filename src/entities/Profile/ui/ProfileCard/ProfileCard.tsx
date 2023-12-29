@@ -7,7 +7,6 @@ import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { ETextAlign, ETextTheme } from 'shared/ui/Text/ui/Text';
 import { Avatar } from 'shared/ui/Avatar';
-import { Select } from 'shared/ui/Select';
 import { CurrencySelect, ECurrency } from 'entities/Currency';
 import { ECountry } from 'entities/Country/model/types/counrty';
 import { CountrySelect } from 'entities/Country';

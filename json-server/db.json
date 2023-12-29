@@ -23,6 +23,18 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "text": "Test",
+      "userId": "1",
+      "id": "oB14qr3"
+    },
+    {
+      "articleId": "1",
+      "text": "Test 2",
+      "userId": "1",
+      "id": "lMIvcyE"
     }
   ],
   "articles": [
@@ -536,23 +548,39 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "kissel0104",
       "password": "1234",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     }
   ],
-  "profile": {
-    "firstName": "Гриша",
-    "lastName": "Русин",
-    "age": 21,
-    "currency": "RUB",
-    "country": "Россия",
-    "city": "Ekatrinburg",
-    "username": "admin",
-    "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Хенадий",
+      "lastName": "Русин",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Ekatrinburg",
+      "username": "admin",
+      "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
+    },
+    {
+      "id": "2",
+      "firstName": "Ирина",
+      "lastName": "Русина",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Ekatrinburg",
+      "username": "kissel0104",
+      "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
+    }
+  ]
 }
