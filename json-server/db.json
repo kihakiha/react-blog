@@ -35,6 +35,12 @@
       "text": "Test 2",
       "userId": "1",
       "id": "lMIvcyE"
+    },
+    {
+      "articleId": "2",
+      "text": "python!!!",
+      "userId": "1",
+      "id": "rR3Rqni"
     }
   ],
   "articles": [

@@ -1,7 +1,7 @@
 import React, { type PropsWithChildren } from 'react'
 import { EnumTheme, LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../lib/ThemeContext'
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as EnumTheme) || EnumTheme.LIGHT
+const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as EnumTheme) || EnumTheme.DARK
 
 interface IThemeProviderProps {
   initialTheme?: EnumTheme
