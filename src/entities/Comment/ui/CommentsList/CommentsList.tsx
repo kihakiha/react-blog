@@ -36,7 +36,7 @@ export const CommentsList = (props: ICommentsListProps) => {
   return (
     <div className={cn(styles.CommentsList, {}, [className])}>
       {comments?.length
-        ? comments.map((comment) => <Comment isLoading={isLoading} className={styles.comment} comment={comment} />)
+        ? comments.map((comment) => <Comment key={comment.id} isLoading={isLoading} className={styles.comment} comment={comment} />)
         : <Text title={t('Комментарии отсутствуют')} />}
     </div>
   );

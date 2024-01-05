@@ -23,6 +23,7 @@ const articlesPageSlice = createSlice({
     viewType: EArticleViewType.CELLS,
     page: 1,
     hasMore: true,
+    _inited: false,
   }),
   reducers: {
     setViewType: (state, action: PayloadAction<EArticleViewType>) => {
@@ -35,7 +36,8 @@ const articlesPageSlice = createSlice({
     initState: (state) => {
       const view = localStorage.getItem(ARTICLE_VIEWTYPE_LOCALSTORAGE_KEY) as EArticleViewType;
       state.viewType = view;
-      state.limit = view === EArticleViewType.LIST ? 4 : 12
+      state.limit = view === EArticleViewType.LIST ? 4 : 12;
+      state._inited = true;
     }
   },
   extraReducers(builder) {

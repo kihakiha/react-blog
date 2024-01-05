@@ -1,20 +1,19 @@
 import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ArticleList, EArticleViewType, IArticle } from 'entities/Article';
+import { ArticleList, EArticleViewType } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
 import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
   getArticlesPageError,
-  getArticlesPageHasMore,
+  getArticlesPageInited,
   getArticlesPageIsLoading,
-  getArticlesPageNum,
   getArticlesPageViewType
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlePageSlice';
@@ -39,6 +38,7 @@ const ArticlesPage = ({ className = '' }: IArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading)
   const error = useSelector(getArticlesPageError)
   const viewType = useSelector(getArticlesPageViewType)
+  const _inited = useSelector(getArticlesPageInited)
 
   const onChangeViewType = React.useCallback((type: EArticleViewType) => {
     dispatch(articlesPageActions.setViewType(type))
@@ -49,8 +49,7 @@ const ArticlesPage = ({ className = '' }: IArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(fetchArticlesList({ page: 1 }))
+    dispatch(initArticlesPage())
   });
 
   if (error) {
@@ -62,7 +61,7 @@ const ArticlesPage = ({ className = '' }: IArticlesPageProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart} className={cn(styles.ArticlesPage, {}, [className])}>
         <div className={styles.header}>
           <h1>{t('Статьи')}</h1>
