@@ -31,7 +31,7 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
   ))), [collapsed, sidebarItemsList])
 
   return (
-    <aside
+    <menu
       data-testid="sidebar"
       className={cn(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
     >
@@ -53,6 +53,6 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
-    </aside>
+    </menu>
   );
 })

@@ -5,5 +5,10 @@ export interface articlesPageSchema extends EntityState<IArticle, string> {
   error?: string;
   isLoading?: boolean;
 
-  viewType: EArticleViewType
+  viewType: EArticleViewType;
+
+  // Pagination
+  page: number;
+  limit?: number;
+  hasMore: boolean;
 }

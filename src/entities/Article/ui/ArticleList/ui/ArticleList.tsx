@@ -30,16 +30,6 @@ export const ArticleList = (props: IArticleListProps) => {
 
   const { t } = useTranslation();
 
-  if (isLoading) {
-    return (
-      <div className={cn(styles.ArticleList, {}, [className, styles[viewType]])}>
-        {
-          getSkeletons(viewType)
-        }
-      </div>
-    )
-  }
-
   const renderArticle = (article: IArticle) => <ArticleListItem key={article.title + article.id} viewType={viewType} article={article} />
 
   return (
@@ -49,6 +39,7 @@ export const ArticleList = (props: IArticleListProps) => {
           ? articles?.map(renderArticle)
           : null
       }
+      {isLoading && getSkeletons(viewType)}
     </div>
   );
 };

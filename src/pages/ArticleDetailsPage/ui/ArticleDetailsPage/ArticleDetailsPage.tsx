@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button';
 import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
+import { Page } from 'shared/ui/Page';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
@@ -54,15 +55,15 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={cn(styles.ArticleDetailsPage, {}, [className])}>
+      <Page className={cn(styles.ArticleDetailsPage, {}, [className])}>
         <Text title={t('Ошибка 404')} text={`${t('Статья не найдена')} :d`} theme={ETextTheme.ERROR} align={ETextAlign.CENTER} />
-      </div>
+      </Page>
     )
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={cn(styles.ArticleDetailsPage, {}, [className])}>
+      <Page className={cn(styles.ArticleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList}>{t('Вернуться к списку')}</Button>
         <ArticleDetails articleId={id} />
         <Text title={t('Комментарии')} className={styles.commentTitle} />
@@ -72,7 +73,7 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
           comments={comments}
           error={commentError}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

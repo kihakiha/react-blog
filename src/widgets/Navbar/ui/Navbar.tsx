@@ -33,7 +33,7 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
 
   if (authData) {
     return (
-      <nav className={cn(styles.navbar, {}, [className])}>
+      <header className={cn(styles.navbar, {}, [className])}>
         <Button
           type="button"
           theme={EButtonTheme.CLEAR}
@@ -42,7 +42,7 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
         >
           {t('Выйти')}
         </Button>
-      </nav>
+      </header>
     )
   }
 

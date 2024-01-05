@@ -6,10 +6,15 @@ import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/Dynami
 import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
 import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Page } from 'shared/ui/Page';
+import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesPageError,
+  getArticlesPageHasMore,
   getArticlesPageIsLoading,
+  getArticlesPageNum,
   getArticlesPageViewType
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlePageSlice';
@@ -39,14 +44,26 @@ const ArticlesPage = ({ className = '' }: IArticlesPageProps) => {
     dispatch(articlesPageActions.setViewType(type))
   }, [dispatch]);
 
+  const onLoadNextPart = React.useCallback(() => {
+    dispatch(fetchNextArticlesPage())
+  }, [dispatch]);
+
   useInitialEffect(() => {
-    dispatch(fetchArticlesList())
     dispatch(articlesPageActions.initState())
+    dispatch(fetchArticlesList({ page: 1 }))
   });
+
+  if (error) {
+    return (
+      <Page className={cn(styles.ArticlesPage, {}, [className])}>
+        <Text text="Произошла непредвиденная ошибка" theme={ETextTheme.ERROR} align={ETextAlign.CENTER} />
+      </Page>
+    )
+  }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={cn(styles.ArticlesPage, {}, [className])}>
+      <Page onScrollEnd={onLoadNextPart} className={cn(styles.ArticlesPage, {}, [className])}>
         <div className={styles.header}>
           <h1>{t('Статьи')}</h1>
           <ArticleViewTypeSwitcher viewType={viewType} onViewTypeClick={onChangeViewType} />
@@ -57,7 +74,7 @@ const ArticlesPage = ({ className = '' }: IArticlesPageProps) => {
           viewType={viewType}
           articles={articles}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

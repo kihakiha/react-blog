@@ -41,6 +41,7 @@ export const ArticleViewTypeSwitcher = (props: IArticleViewTypeSwitcherProps) =>
     <div className={cn(styles.ArticleViewTypeSwitcher, {}, [className])}>
       {viewTypes.map((type) => (
         <Button
+          key={type.viewType}
           theme={EButtonTheme.CLEAR}
           onClick={onChangeType(type.viewType)}
         >
