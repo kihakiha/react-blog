@@ -10,12 +10,12 @@ import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { articlesPageSchema } from 'pages/ArticlesPage';
-import { To, NavigateOptions } from 'react-router-dom';
+import { ScrollRestorationSchema } from 'widgets/Page/ScrollRestoration/model/types/ScrollRestorationSchema';
 
 export interface StateSchema {
   counter: CounterSchema,
   user: UserSchema,
-
+  scrollRestoration: ScrollRestorationSchema,
   // Async Reducers
   loginForm?: LoginSchema,
   profile?: ProfileSchema,

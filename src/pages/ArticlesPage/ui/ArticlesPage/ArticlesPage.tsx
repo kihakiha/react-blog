@@ -6,8 +6,8 @@ import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/Dynami
 import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
 import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { Page } from 'shared/ui/Page';
 import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
+import { Page } from 'widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {

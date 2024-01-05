@@ -21,7 +21,7 @@ import { Text } from 'shared/ui/Text'
 import { ETextTheme } from 'shared/ui/Text/ui/Text'
 import { useInitialEffect } from 'shared/libs/hook/useInitialEffect'
 import { useParams } from 'react-router-dom'
-import { Page } from 'shared/ui/Page'
+import { Page } from 'widgets/Page'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
