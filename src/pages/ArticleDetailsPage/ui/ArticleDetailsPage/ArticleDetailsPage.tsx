@@ -2,15 +2,17 @@ import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
 import { CommentsList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
 import { AddCommentForm } from 'features/AddCommentForm';
+import { Button } from 'shared/ui/Button';
+import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
 import { getArticleDetailsCommentsError, getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
@@ -40,6 +42,12 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
     dispatch(addCommentForArticle(text))
   }, [dispatch]);
 
+  const navigate = useNavigate();
+
+  const onBackToList = React.useCallback(() => {
+    navigate(RoutePaths.articles)
+  }, [navigate]);
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   })
@@ -55,6 +63,7 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={cn(styles.ArticleDetailsPage, {}, [className])}>
+        <Button onClick={onBackToList}>{t('Вернуться к списку')}</Button>
         <ArticleDetails articleId={id} />
         <Text title={t('Комментарии')} className={styles.commentTitle} />
         <AddCommentForm onSendComment={onSendComment} />
