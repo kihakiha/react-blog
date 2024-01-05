@@ -1,14 +1,11 @@
 import React from 'react'
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-
 import { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleViewTypeSwitcher } from './ArticleViewTypeSwitcher';
 
 const meta: Meta<typeof ArticleViewTypeSwitcher> = {
-  title: 'shared/ArticleViewTypeSwitcher',
+  title: 'pages/articlesPage/ArticleViewTypeSwitcher',
   component: ArticleViewTypeSwitcher,
 };
 
