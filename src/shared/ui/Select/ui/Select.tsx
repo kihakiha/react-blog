@@ -3,20 +3,20 @@ import { TMods, cn } from 'shared/libs/classNames/classNames';
 
 import styles from './Select.module.scss';
 
-export interface ISelectOptions {
-  value: string;
+export interface ISelectOptions<T extends string> {
+  value: T;
   content: string;
 }
 
-interface ISelectProps {
+interface ISelectProps<T extends string> {
   className?: string;
   label?: string;
-  options?: ISelectOptions[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: ISelectOptions<T>[];
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
-export const Select = React.memo((props: ISelectProps) => {
+export const Select = <T extends string>(props: ISelectProps<T>) => {
   const {
     className = '',
     label,
@@ -37,7 +37,7 @@ export const Select = React.memo((props: ISelectProps) => {
   )), [options])
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value)
+    onChange?.(e.target.value as T)
   }
 
   const mods: TMods = {}
@@ -55,4 +55,4 @@ export const Select = React.memo((props: ISelectProps) => {
       </select>
     </div>
   );
-});
+};

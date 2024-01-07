@@ -1,0 +1,15 @@
+.Tabs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tab {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  opacity: 1;
+
+  &:hover {
+    opacity: .8;
+  }
+}

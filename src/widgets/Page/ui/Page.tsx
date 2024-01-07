@@ -31,8 +31,6 @@ export const Page = (props: IPageProps) => {
   const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, location.pathname));
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    console.log('SCROLL');
-
     dispatch(ScrollRestorationAction.setScrollPosition({
       position: e.currentTarget.scrollTop,
       path: location.pathname
@@ -56,7 +54,7 @@ export const Page = (props: IPageProps) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div className={styles.trigger} ref={triggerRef} /> : null}
     </section>
   );
 };

@@ -1,5 +1,18 @@
 import { IUser } from 'entities/User';
 
+export enum ETags {
+  ALL = 'ALL',
+  IT = 'IT',
+  SCIENCE = 'SCIENCE',
+  ECONOMICS = 'ECONOMICS',
+  JAVASCRIPT = 'JavaScript',
+  PYTHON = 'Python',
+  RUBY = 'Ruby',
+  IOS = 'iOS',
+  ANDROID = 'Android',
+  DESIGN = 'Design',
+}
+
 export enum EArticleBlockType {
   TEXT = 'TEXT',
   CODE = 'CODE',
@@ -9,6 +22,12 @@ export enum EArticleBlockType {
 export enum EArticleViewType {
   LIST = 'LIST',
   CELLS = 'CELLS',
+}
+
+export enum EArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt',
 }
 
 export interface IArticleBlockBase {
@@ -34,12 +53,6 @@ export interface IArticleImageBlock extends IArticleBlockBase {
 }
 
 export type IArticleBlock = IArticleCodeBlock | IArticleTextBlock | IArticleImageBlock;
-
-export enum ETags {
-  IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS',
-}
 
 export interface IArticle {
   id: string
