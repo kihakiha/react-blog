@@ -17,3 +17,23 @@ body {
   display:  flex;
 }
 
+/* Scroll on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+  height: 6px;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-color);        /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);    /* color of the scroll thumb */
+  border-radius: 5px;       /* roundness of the scroll thumb */
+}
+
+/* Scroll on Firefox */
+* {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: var(--primary-color) var(--bg-color);   /* scroll thumb and track */ 
+}

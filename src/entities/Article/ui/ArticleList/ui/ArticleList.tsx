@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributeAnchorTarget } from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
@@ -13,6 +13,7 @@ interface IArticleListProps {
   isLoading?: boolean;
   error?: string;
   viewType?: EArticleViewType;
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (viewType: EArticleViewType) => new Array(viewType === EArticleViewType.CELLS ? 12 : 2).fill(0).map((item, index) => (
@@ -26,11 +27,12 @@ export const ArticleList = (props: IArticleListProps) => {
     isLoading,
     error,
     viewType = EArticleViewType.CELLS,
+    target
   } = props
 
   const { t } = useTranslation('article');
 
-  const renderArticle = (article: IArticle) => <ArticleListItem key={article.title + article.id} viewType={viewType} article={article} />
+  const renderArticle = (article: IArticle) => <ArticleListItem key={article.title + article.id} target={target} viewType={viewType} article={article} />
 
   if (!isLoading && !articles?.length) {
     return (

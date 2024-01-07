@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributeAnchorTarget } from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text'
@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar';
 import { Button } from 'shared/ui/Button';
 import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
+import { AppLink } from 'shared/ui/AppLink';
 import {
   EArticleBlockType, EArticleViewType, IArticle, IArticleTextBlock
 } from '../../../model/types/article';
@@ -21,21 +22,23 @@ interface IArticleListItemProps {
   className?: string;
   article: IArticle;
   viewType: EArticleViewType;
+  target?: HTMLAttributeAnchorTarget
 }
 export const ArticleListItem = (props: IArticleListItemProps) => {
   const {
     className = '',
     article,
     viewType,
+    target
   } = props;
 
   const { t } = useTranslation('article');
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const onOpenArticle = React.useCallback(() => {
-    navigate(RoutePaths.article_details + article.id)
-  }, [article.id, navigate])
+  // const onOpenArticle = React.useCallback(() => {
+  //   navigate(RoutePaths.article_details + article.id)
+  // }, [article.id, navigate])
 
   const views = (
     <div className={styles.viewsWrapper}>
@@ -63,7 +66,9 @@ export const ArticleListItem = (props: IArticleListItemProps) => {
           <img src={article.img} alt={article.title} className={styles.image} />
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={styles.textBlock} />}
           <div className={styles.footer}>
-            <Button onClick={onOpenArticle}>{t('Читать далее...')}</Button>
+            <AppLink target={target} to={RoutePaths.article_details + article.id}>
+              <Button>{t('Читать далее...')}</Button>
+            </AppLink>
             {views}
           </div>
         </Card>
@@ -72,8 +77,12 @@ export const ArticleListItem = (props: IArticleListItemProps) => {
   }
 
   return (
-    <div className={cn(styles.ArticleListItem, {}, [className, styles[viewType]])}>
-      <Card onClick={onOpenArticle}>
+    <AppLink
+      to={RoutePaths.article_details + article.id}
+      target={target}
+      className={cn(styles.ArticleListItem, {}, [className, styles[viewType]])}
+    >
+      <Card>
         <div className={styles.imageWrapper}>
           <img src={article.img} alt={article.title} className={styles.image} />
           <Text text={article.createdAt} size={ETextSize.XS} align={ETextAlign.RIGHT} className={styles.date} />
@@ -84,6 +93,6 @@ export const ArticleListItem = (props: IArticleListItemProps) => {
         </div>
         <Text title={article.title} className={styles.title} size={ETextSize.XS} />
       </Card>
-    </div>
+    </AppLink>
   );
 };
