@@ -34,12 +34,6 @@ export const ArticleListItem = (props: IArticleListItemProps) => {
 
   const { t } = useTranslation('article');
 
-  // const navigate = useNavigate()
-
-  // const onOpenArticle = React.useCallback(() => {
-  //   navigate(RoutePaths.article_details + article.id)
-  // }, [article.id, navigate])
-
   const views = (
     <div className={styles.viewsWrapper}>
       <Text text={String(article.views)} className={styles.views} />

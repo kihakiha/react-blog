@@ -13,5 +13,10 @@
   "Неверный логин или пароль": "Invalid login or password",
   "Логин": "Username",
   "Пароль": "Password",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Комментарии отсутствуют": "There are no comments",
+  "Новая статья": "New article",
+  "Комментарий": "Comment",
+  "Отправить": "Send",
+  "Аватар пользователя": "User's avatar"
 }

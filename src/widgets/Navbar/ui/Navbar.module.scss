@@ -2,9 +2,17 @@
   display: flex;
   align-items: center;
   background-color: var(--secondary-bg-color);
-  gap: 10px;
   width: 100%;
   height: var(--navbar-height);
   padding: 20px;
-  justify-content: end;
+  justify-content: space-between;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.appName{
+  width: var(--sidebar-width)
 }

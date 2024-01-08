@@ -39,6 +39,7 @@ import {
 import { articleDetailsPageReducer } from '../../model/slices';
 
 import styles from './ArticleDetailsPage.module.scss';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ui/ArticleDetailsPageHeader';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -67,12 +68,6 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
     dispatch(addCommentForArticle(text))
   }, [dispatch]);
 
-  const navigate = useNavigate();
-
-  const onBackToList = React.useCallback(() => {
-    navigate(RoutePaths.articles)
-  }, [navigate]);
-
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
     dispatch(fetchArticleRecommendations());
@@ -89,7 +84,7 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={cn(styles.ArticleDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList}>{t('Вернуться к списку')}</Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails articleId={id} />
         <Text
           title={t('Рекомендуем')}

@@ -6,6 +6,10 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userAction } from 'entities/User';
 import { Button, EButtonTheme } from 'shared/ui/Button';
+import { Text } from 'shared/ui/Text'
+import { AppLink } from 'shared/ui/AppLink';
+import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
+import { ETextSize } from 'shared/ui/Text/ui/Text';
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -33,7 +37,16 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
 
   if (authData) {
     return (
-      <header className={cn(styles.navbar, {}, [className])}>
+      <nav className={cn(styles.navbar, {}, [className])}>
+        <div className={styles.navLeft}>
+          <Text size={ETextSize.L} className={styles.appName} title="REACT BLOG" />
+          <AppLink
+            to={RoutePaths.article_create}
+            className={styles.newArticleLink}
+          >
+            {t('Новая статья')}
+          </AppLink>
+        </div>
         <Button
           type="button"
           theme={EButtonTheme.CLEAR}
@@ -42,12 +55,13 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
         >
           {t('Выйти')}
         </Button>
-      </header>
+      </nav>
     )
   }
 
   return (
     <nav className={cn(styles.navbar, {}, [className])}>
+      <Text className={styles.appName} title="REACT BLOG" />
       <Button
         type="button"
         theme={EButtonTheme.CLEAR}
