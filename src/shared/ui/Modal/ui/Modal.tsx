@@ -1,8 +1,7 @@
 import React, { MutableRefObject } from 'react';
 import { TMods, cn } from 'shared/libs/classNames/classNames';
 
-import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { Portal } from '../../Portal/Portal';
 import styles from './Modal.module.scss';
 
 interface IModalProps {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 
-import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
+import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { Button, EButtonTheme, EButtonSize } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';

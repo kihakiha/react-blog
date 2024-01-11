@@ -29,7 +29,11 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', 'i18next'],
+  plugins: [
+    'react',
+    'i18next',
+    "kihakiha-plugin",  
+  ],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/react-in-jsx-scope': 'off',
@@ -63,6 +67,7 @@ module.exports = {
       },
     ],
     'linebreak-style': 'off',
+    'kihakiha-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

@@ -2,8 +2,8 @@ import React from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ISelectOptions, Select } from 'shared/ui/Select';
-import { EArticleSortField } from 'entities/Article/model/types/article';
 import { SortOrder } from 'shared/types';
+import { EArticleSortField } from '../../../model/types/article';
 import styles from './ArticlesSortSelect.module.scss';
 
 interface IArticlesSortSelectProps {

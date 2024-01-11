@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { EArticleViewType, IArticle } from 'entities/Article/model/types/article';
 import avatarImg from 'shared/assets/tests/storybookAvatar.jpg'
+import { EArticleViewType, IArticle } from '../../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 const meta: Meta<typeof ArticleList> = {

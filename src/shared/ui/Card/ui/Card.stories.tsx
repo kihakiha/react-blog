@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text } from 'shared/ui/Text'
 import { Meta, StoryObj } from '@storybook/react';
+import { Text } from '../../Text'
 
 import { Card } from './Card';
 

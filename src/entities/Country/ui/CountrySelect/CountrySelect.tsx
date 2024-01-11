@@ -1,7 +1,7 @@
-import { ECountry } from 'entities/Country';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select';
+import { ECountry } from '../../model/types/counrty';
 
 interface ICountrySelectProps {
   className?: string;

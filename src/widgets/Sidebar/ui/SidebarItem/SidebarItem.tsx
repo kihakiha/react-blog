@@ -5,7 +5,7 @@ import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink';
 import { useTranslation } from 'react-i18next';
-import { ISidebarItem } from 'widgets/Sidebar/model/types/sidebar';
+import { ISidebarItem } from '../../model/types/sidebar';
 import styles from './SidebarItem.module.scss';
 
 interface ISidebarItemProps {
