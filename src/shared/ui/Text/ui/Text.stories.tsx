@@ -77,7 +77,6 @@ export const Size_XS: Story = {
   args: {
     title: 'Lorem Ipsum',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas, iste illo dolor eligendi ab.',
-    theme: ETextTheme.ERROR,
     size: ETextSize.XS
   },
 }
@@ -86,7 +85,6 @@ export const Size_M: Story = {
   args: {
     title: 'Lorem Ipsum',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas, iste illo dolor eligendi ab.',
-    theme: ETextTheme.ERROR,
     size: ETextSize.M
   },
 }
@@ -95,7 +93,6 @@ export const Size_L: Story = {
   args: {
     title: 'Lorem Ipsum',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas, iste illo dolor eligendi ab.',
-    theme: ETextTheme.ERROR,
     size: ETextSize.L
   },
 }

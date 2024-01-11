@@ -25,7 +25,9 @@ const directionClasses: Record<FlexDirection, string> = {
   column: styles.directionColumn
 }
 
-export interface IFlexProps {
+type DivProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+export interface IFlexProps extends DivProps {
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;

@@ -32,11 +32,11 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
   ))), [collapsed, sidebarItemsList])
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={cn(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
     >
-      <VStack gap={10} justify="start" className={styles.items}>
+      <VStack role="navigation" gap={10} justify="start" className={styles.items}>
         {itemsList}
       </VStack>
       <Button
@@ -54,6 +54,6 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
-    </menu>
+    </aside>
   );
 })

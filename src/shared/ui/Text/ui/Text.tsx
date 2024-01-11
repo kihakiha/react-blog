@@ -28,6 +28,15 @@ interface ITextProps {
   align?: ETextAlign;
   size?: ETextSize;
 }
+
+type THeaderTag = 'h1' | 'h2' | 'h3'
+
+const mapSizeToHeaderTag: Record<ETextSize, THeaderTag> = {
+  [ETextSize.XS]: 'h3',
+  [ETextSize.M]: 'h2',
+  [ETextSize.L]: 'h1',
+};
+
 export const Text = React.memo((props: ITextProps) => {
   const {
     text = '',
@@ -43,9 +52,12 @@ export const Text = React.memo((props: ITextProps) => {
     [styles[align]]: true,
     [styles[size]]: true,
   }
+
+  const HeaderTag = mapSizeToHeaderTag[size];
+
   return (
     <div className={cn(styles.TextWrapper, mods, [className])}>
-      {title && <p className={styles.Title}>{title}</p>}
+      {title && <HeaderTag className={styles.Title}>{title}</HeaderTag>}
       {text && <p className={styles.Text}>{text}</p>}
     </div>
   );
