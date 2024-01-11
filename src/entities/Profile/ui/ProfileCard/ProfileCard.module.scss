@@ -1,24 +1,10 @@
 .ProfileCard {
   padding: 20px;
-  margin-top: 20px;
   border: 2px solid var(--primary-color)
 }
 
-.input {
-  margin-top: 10px;
-}
-
 .loading, .error{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 300px;
-}
-
-.AvatarWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .editing {

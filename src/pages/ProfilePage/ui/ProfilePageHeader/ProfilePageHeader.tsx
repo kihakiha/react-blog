@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
 import { Button, EButtonTheme } from 'shared/ui/Button';
 import { getUserAuthData } from 'entities/User';
-import styles from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface IProfilePageHeaderProps {
   className?: string;
@@ -40,10 +40,10 @@ export const ProfilePageHeader = ({ className = '' }: IProfilePageHeaderProps) =
   }, [dispatch])
 
   return (
-    <div className={styles.ProfilePageHeader}>
+    <HStack max justify="between" className={cn('', {}, [className])}>
       <Text title={t('Профиль')} />
       {canEdit && (
-        <div>
+        <>
           {readonly
             ? (
               <Button
@@ -53,11 +53,10 @@ export const ProfilePageHeader = ({ className = '' }: IProfilePageHeaderProps) =
                 {t('Редактировать')}
               </Button>
             ) : (
-              <div>
+              <HStack gap={10} justify="end">
                 <Button
                   theme={EButtonTheme.OUTLINE}
                   onClick={onConfirmSave}
-                  className={styles.saveBtn}
                 >
                   {t('Подтвердить')}
                 </Button>
@@ -67,10 +66,10 @@ export const ProfilePageHeader = ({ className = '' }: IProfilePageHeaderProps) =
                 >
                   {t('Отменить')}
                 </Button>
-              </div>
+              </HStack>
             )}
-        </div>
+        </>
       )}
-    </div>
+    </HStack>
   )
 };

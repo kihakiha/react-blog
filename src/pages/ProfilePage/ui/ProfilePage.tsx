@@ -22,6 +22,7 @@ import { ETextTheme } from 'shared/ui/Text/ui/Text'
 import { useInitialEffect } from 'shared/libs/hook/useInitialEffect'
 import { useParams } from 'react-router-dom'
 import { Page } from 'widgets/Page'
+import { VStack } from 'shared/ui/Stack'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
@@ -89,28 +90,30 @@ const ProfilePage = () => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
-        <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map((err) => (
-          <Text
-            theme={ETextTheme.ERROR}
-            text={validateErrorTranslate[err]}
-            key={err}
+        <VStack max gap={20}>
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map((err) => (
+            <Text
+              theme={ETextTheme.ERROR}
+              text={validateErrorTranslate[err]}
+              key={err}
+            />
+          ))}
+          <ProfileCard
+            data={formData}
+            isLoading={isLoading}
+            error={error}
+            readonly={readonly}
+            onChangeFirstName={onChangeFirstName}
+            onChangeLastName={onChangeLastName}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUsername={onChangeUsername}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
           />
-        ))}
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeFirstName={onChangeFirstName}
-          onChangeLastName={onChangeLastName}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUsername={onChangeUsername}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   )
