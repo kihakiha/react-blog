@@ -81,6 +81,11 @@
 }
 
 .disabled {
-  cursor: wait;
-  opacity: .4;
+  opacity: .7;
+
+  &:hover {
+    opacity: .7;
+    fill-opacity: .7;
+    stroke-opacity: .7; 
+  }
 }

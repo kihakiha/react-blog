@@ -1,0 +1,46 @@
+.ListBox {
+  position: relative;
+}
+
+.options{
+  background: var(--listbox-bg);
+  position: absolute;
+  z-index: var(--select-z-index);
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--listbox-bg);
+  outline: none;
+  min-width: 100%;
+
+  .top {
+    bottom: 100%;
+  }
+}
+
+.item{
+  padding: 8px 16px;
+  text-decoration: none;
+  list-style: none;
+  transition: transform .3s ease-in-out;
+  cursor: pointer;
+}
+
+.active, .selected{
+  transition: transform .1s ease-in-out;
+  transform: translateX(7px);
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.label {
+  margin-right: 6px;
+}
+
+.optionTop {
+  bottom: 100%;
+}

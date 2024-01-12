@@ -1,13 +1,8 @@
 import React from 'react'
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Select } from './Select';
-
-import avataImg from './storybookSelect.jpg'
 
 const meta: Meta<typeof Select> = {
   title: 'shared/Select',
