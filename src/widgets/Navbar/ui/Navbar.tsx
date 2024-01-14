@@ -10,6 +10,8 @@ import { Text } from 'shared/ui/Text'
 import { AppLink } from 'shared/ui/AppLink';
 import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
 import { ETextSize } from 'shared/ui/Text/ui/Text';
+import { Dropdown } from 'shared/ui/Dropdown';
+import { Avatar } from 'shared/ui/Avatar';
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -47,14 +49,20 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
             {t('Новая статья')}
           </AppLink>
         </div>
-        <Button
-          type="button"
-          theme={EButtonTheme.CLEAR}
-          className={styles.links}
-          onClick={onLogout}
-        >
-          {t('Выйти')}
-        </Button>
+        <Dropdown
+          triggerBtn={<Avatar size={40} src={authData.avatar} />}
+          direction="bottom left"
+          items={[
+            {
+              content: t('Профиль'),
+              href: RoutePaths.profile + authData.id
+            },
+            {
+              content: t('Выйти'),
+              onClick: onLogout
+            }
+          ]}
+        />
       </nav>
     )
   }

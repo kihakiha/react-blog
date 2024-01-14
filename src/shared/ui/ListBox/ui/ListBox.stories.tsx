@@ -2,13 +2,14 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
   title: 'shared/ListBox',
   component: ListBox,
+  decorators: [
+    (Story) => <div style={{ padding: 200, maxWidth: 400 }}><Story /></div>
+  ]
 };
 
 export default meta;
@@ -25,14 +26,37 @@ const data = [
 export const Primary: Story = {
   args: {
     items: data,
-    value: data[0].value
+    value: '123'
   },
 }
 
-export const Dark: Story = {
+export const Direction_Top_Left: Story = {
   args: {
     items: data,
-    value: data[0].value
+    value: '123',
+    direction: 'top left'
   },
 }
-Dark.decorators = [ThemeDecorator(EnumTheme.DARK)]
+export const Direction_Top_Right: Story = {
+  args: {
+    items: data,
+    value: '123',
+    direction: 'top right'
+  },
+}
+
+export const Direction_Bottom_Right: Story = {
+  args: {
+    items: data,
+    value: '123',
+    direction: 'bottom right'
+  },
+}
+
+export const Direction_Bottom_Left: Story = {
+  args: {
+    items: data,
+    value: '123',
+    direction: 'bottom left'
+  },
+}

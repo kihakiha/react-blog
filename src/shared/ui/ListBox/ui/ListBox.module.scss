@@ -9,11 +9,6 @@
   border-radius: 12px;
   box-shadow: 4px 4px 8px var(--listbox-bg);
   outline: none;
-  min-width: 100%;
-
-  .top {
-    bottom: 100%;
-  }
 }
 
 .item{
@@ -41,6 +36,20 @@
   margin-right: 6px;
 }
 
-.optionTop {
+.optionBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.optionBottomRight {
+  top: 100%;
+}
+
+.optionTopLeft {
+  bottom: 100%;
+  right: 0;
+}
+
+.optionTopRight {
   bottom: 100%;
 }

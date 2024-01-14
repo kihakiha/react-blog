@@ -39,7 +39,7 @@ export const CurrencySelect = React.memo((props: ICurrencySelectProps) => {
       readonly={readonly}
       label={t('Валюта')}
       className={className}
-      direction="top"
+      direction="top right"
     />
   );
 });

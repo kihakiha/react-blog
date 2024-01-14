@@ -46,7 +46,7 @@ export const CountrySelect = React.memo((props: ICountrySelectProps) => {
       readonly={readonly}
       label={t('Страна')}
       className={className}
-      direction="top"
+      direction="top left"
     />
   );
 });
