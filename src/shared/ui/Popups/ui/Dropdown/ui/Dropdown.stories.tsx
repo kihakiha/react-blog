@@ -2,13 +2,11 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-import { Button } from '../../Button';
+import { Button } from '../../../../Button';
 import { Dropdown } from './Dropdown';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'shared/Dropdown',
+  title: 'shared/Popups/Dropdown',
   component: Dropdown,
   decorators: [
     (Story) => <div style={{ padding: 200, maxWidth: 600 }}><Story /></div>

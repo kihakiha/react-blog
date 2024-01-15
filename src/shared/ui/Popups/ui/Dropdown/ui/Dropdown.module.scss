@@ -1,16 +1,3 @@
-.Dropdown {
-  position: relative;
-}
-
-.btn{
-  background: none;
-  border: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
 .menu{
   background: var(--menu-bg);
   z-index: var(--menu-z-index);
@@ -40,20 +27,3 @@
   font-weight: bold;
 }
 
-.optionBottomLeft {
-  top: 100%;
-  right: 0;
-}
-
-.optionBottomRight {
-  top: 100%;
-}
-
-.optionTopLeft {
-  bottom: 100%;
-  right: 0;
-}
-
-.optionTopRight {
-  bottom: 100%;
-}

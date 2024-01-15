@@ -10,8 +10,11 @@ import { Text } from 'shared/ui/Text'
 import { AppLink } from 'shared/ui/AppLink';
 import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
 import { ETextSize } from 'shared/ui/Text/ui/Text';
-import { Dropdown } from 'shared/ui/Dropdown';
 import { Avatar } from 'shared/ui/Avatar';
+import { HStack } from 'shared/ui/Stack';
+import { Icon } from 'shared/ui/Icon';
+import { Dropdown, Popover } from 'shared/ui/Popups';
+import notificationsSvg from 'shared/assets/icons/notification.svg'
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -40,7 +43,7 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
   if (authData) {
     return (
       <nav className={cn(styles.navbar, {}, [className])}>
-        <div className={styles.navLeft}>
+        <HStack className={styles.navLeft}>
           <Text size={ETextSize.L} className={styles.appName} title="REACT BLOG" />
           <AppLink
             to={RoutePaths.article_create}
@@ -48,21 +51,33 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
           >
             {t('Новая статья')}
           </AppLink>
-        </div>
-        <Dropdown
-          triggerBtn={<Avatar size={40} src={authData.avatar} />}
-          direction="bottom left"
-          items={[
-            {
-              content: t('Профиль'),
-              href: RoutePaths.profile + authData.id
-            },
-            {
-              content: t('Выйти'),
-              onClick: onLogout
-            }
-          ]}
-        />
+        </HStack>
+        <HStack gap={16} justify="end">
+          <Popover
+            triggerBtn={(
+              <Button theme={EButtonTheme.CLEAR}>
+                <Icon Svg={notificationsSvg} />
+              </Button>
+            )}
+            direction="bottom left"
+          >
+            asdasda
+          </Popover>
+          <Dropdown
+            triggerBtn={<Avatar size={40} src={authData.avatar} />}
+            direction="bottom left"
+            items={[
+              {
+                content: t('Профиль'),
+                href: RoutePaths.profile + authData.id
+              },
+              {
+                content: t('Выйти'),
+                onClick: onLogout
+              }
+            ]}
+          />
+        </HStack>
       </nav>
     )
   }

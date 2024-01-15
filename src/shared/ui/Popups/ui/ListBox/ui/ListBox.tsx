@@ -2,8 +2,11 @@ import React, { Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import { cn } from 'shared/libs/classNames/classNames'
 import { TDropDownDirection } from 'shared/types/ui'
-import { Button } from '../../Button'
+import { mapDirectionClass } from '../../../styles/consts'
+import { Button } from '../../../../Button'
+
 import styles from './ListBox.module.scss'
+import popupStyles from '../../../styles/popups.module.scss'
 
 export interface IListBoxItems {
   value: string;
@@ -19,13 +22,6 @@ interface IListBoxProps {
   readonly?: boolean;
   label?: string;
   direction?: TDropDownDirection;
-}
-
-const mapDirectionClass: Record<TDropDownDirection, string> = {
-  'bottom left': styles.optionBottomLeft,
-  'bottom right': styles.optionBottomRight,
-  'top left': styles.optionTopLeft,
-  'top right': styles.optionTopRight,
 }
 
 export const ListBox = (props: IListBoxProps) => {
@@ -48,7 +44,7 @@ export const ListBox = (props: IListBoxProps) => {
     <HListBox
       disabled={readonly}
       as="div"
-      className={cn(styles.ListBox, {}, [className])}
+      className={cn(styles.ListBox, {}, [className, popupStyles.popup])}
       value={value}
       onChange={onChange}
     >
@@ -56,7 +52,7 @@ export const ListBox = (props: IListBoxProps) => {
         {label && <span className={styles.label}>{`${label}>`}</span>}
       </HListBox.Label>
       <HListBox.Button
-        className={styles.trigger}
+        className={popupStyles.trigger}
       >
         <Button disabled={readonly} className={styles.Button}>
           {value ?? defaultValue}

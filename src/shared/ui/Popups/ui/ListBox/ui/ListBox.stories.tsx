@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-  title: 'shared/ListBox',
+  title: 'shared/Popups/ListBox',
   component: ListBox,
   decorators: [
     (Story) => <div style={{ padding: 200, maxWidth: 400 }}><Story /></div>

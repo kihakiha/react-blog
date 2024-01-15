@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui/Select';
-import { ListBox } from 'shared/ui/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 import { ECountry } from '../../model/types/counrty';
 
 interface ICountrySelectProps {
@@ -46,7 +45,7 @@ export const CountrySelect = React.memo((props: ICountrySelectProps) => {
       readonly={readonly}
       label={t('Страна')}
       className={className}
-      direction="top left"
+      direction="top right"
     />
   );
 });
