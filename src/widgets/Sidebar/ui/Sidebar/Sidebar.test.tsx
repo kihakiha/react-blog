@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { fireEvent, screen } from '@testing-library/react';
-import { renderWithTranslation } from 'shared/config/tests/renderWithTranslation';
 import { componentRender } from 'shared/config/tests/componentRender';
 import { Sidebar } from './Sidebar';
 

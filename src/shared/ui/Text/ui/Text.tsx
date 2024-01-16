@@ -27,6 +27,9 @@ interface ITextProps {
   theme?: ETextTheme;
   align?: ETextAlign;
   size?: ETextSize;
+
+  // For tests
+  'data-testid'?: string;
 }
 
 type THeaderTag = 'h1' | 'h2' | 'h3'
@@ -45,6 +48,7 @@ export const Text = React.memo((props: ITextProps) => {
     theme = ETextTheme.PRIMARY,
     align = ETextAlign.LEFT,
     size = ETextSize.M,
+    'data-testid': dataTestId = 'Text'
   } = props;
 
   const mods: TMods = {
@@ -57,8 +61,22 @@ export const Text = React.memo((props: ITextProps) => {
 
   return (
     <div className={cn(styles.TextWrapper, mods, [className])}>
-      {title && <HeaderTag className={styles.Title}>{title}</HeaderTag>}
-      {text && <p className={styles.Text}>{text}</p>}
+      {title && (
+        <HeaderTag
+          data-testid={`${dataTestId}.Title`}
+          className={styles.Title}
+        >
+          {title}
+        </HeaderTag>
+      )}
+      {text && (
+        <p
+          data-testid={`${dataTestId}.Text`}
+          className={styles.Text}
+        >
+          {text}
+        </p>
+      )}
     </div>
   );
 });

@@ -19,7 +19,7 @@ export const ArticleRecommendationList = (props: IArticleRecommendationListProps
 
   const { data: articles, error, isLoading } = useArticleRecommendationsList(4);
 
-  if (error || isLoading) {
+  if (error || isLoading || !articles) {
     return null
   }
 

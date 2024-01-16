@@ -10,11 +10,11 @@ export const NotificationList = (props: INotificationListProps) => {
   const {
     className = ''
   } = props
-  
+
   const { t } = useTranslation();
   return (
     <div className={cn(styles.NotificationList, {}, [className])}>
-
+      /
     </div>
   );
 };
