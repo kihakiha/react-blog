@@ -11,6 +11,7 @@ import { Input } from 'shared/ui/Input';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/libs/hook/useDebounce';
 import { ITabItem, Tabs } from 'shared/ui/Tabs';
+import { HStack, VStack } from 'shared/ui/Stack';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -75,8 +76,8 @@ export const ArticlesPageFilters = ({ className = '' }: IArticlesPageFiltersProp
   const tagsList = Object.entries(ETags).map(([value, content]) => ({ value, content }));
 
   return (
-    <div className={cn(styles.ArticlesPageFilters, {}, [className])}>
-      <div className={styles.sortWrapper}>
+    <VStack max gap={16} className={cn('', {}, [className])}>
+      <HStack max align="center" justify="between">
         <ArticlesSortSelect
           order={order}
           sort={sort}
@@ -84,16 +85,15 @@ export const ArticlesPageFilters = ({ className = '' }: IArticlesPageFiltersProp
           onChangeSort={onChangeSort}
         />
         <ArticleViewTypeSwitcher viewType={viewType} onViewTypeClick={onChangeViewType} />
-      </div>
+      </HStack>
       <Card className={styles.search}>
         <Input onChange={onChangeSearch} value={search} placeholder={`${t('Поиск')}...`} />
       </Card>
       <Tabs
-        className={styles.tags}
         tabs={tagsList}
         value={tag}
         onTabClick={onChangeTag}
       />
-    </div>
+    </VStack>
   );
 };

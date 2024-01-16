@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { IProfile } from '../../types/profile';
+import { IProfile } from 'entities/Profile';
 
 export const fetchProfileData = createAsyncThunk<IProfile, string, ThunkConfig<string>>(
   'profile/fetchProfileDatta',
@@ -12,8 +12,6 @@ export const fetchProfileData = createAsyncThunk<IProfile, string, ThunkConfig<s
       }
       return response.data
     } catch (error) {
-      console.log(error);
-
       return rejectWithValue('Произошла непредвиденная ошибка')
     }
   }
