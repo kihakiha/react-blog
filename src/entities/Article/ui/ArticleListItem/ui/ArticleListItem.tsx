@@ -2,7 +2,7 @@ import React, { HTMLAttributeAnchorTarget } from 'react';
 import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text'
-import { ETextAlign, ETextSize } from 'shared/ui/Text/ui/Text';
+import { ETextAlign, ETextSize, ETextTheme } from 'shared/ui/Text/ui/Text';
 import ViewsIcon from 'shared/assets/icons/views.svg'
 import { Icon } from 'shared/ui/Icon';
 import { Card } from 'shared/ui/Card';
@@ -36,7 +36,7 @@ export const ArticleListItem = (props: IArticleListItemProps) => {
 
   const views = (
     <div className={styles.viewsWrapper}>
-      <Text text={String(article.views)} className={styles.views} />
+      <Text text={String(article.views)} theme={ETextTheme.PRIMARY} className={styles.views} />
       <Icon Svg={ViewsIcon} />
     </div>
   )

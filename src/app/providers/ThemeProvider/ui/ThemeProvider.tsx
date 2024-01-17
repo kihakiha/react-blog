@@ -12,13 +12,10 @@ const ThemeProvider: React.FC<PropsWithChildren<IThemeProviderProps>> = (props) 
 
   const [theme, setTheme] = React.useState<EnumTheme>(initialTheme || defaultTheme)
 
-  const defaultProps = React.useMemo(
-    () => ({
-      theme,
-      setTheme
-    }),
-    [theme]
-  )
+  const defaultProps = React.useMemo(() => ({
+    theme,
+    setTheme,
+  }), [theme]);
 
   return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>
 }

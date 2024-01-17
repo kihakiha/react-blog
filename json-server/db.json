@@ -594,14 +594,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     },
     {
       "id": "2",
       "username": "kissel0104",
       "password": "1234",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
+    },
+    {
+      "id": "3",
+      "username": "nagibator3000",
+      "password": "1234",
+      "roles": ["MANAGER"],
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     }
   ],
@@ -626,6 +633,17 @@
       "country": "Россия",
       "city": "Ekatrinburg",
       "username": "kissel0104",
+      "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
+    },
+    {
+      "id": "3",
+      "firstName": "Алекскей",
+      "lastName": "Иванов",
+      "age": 69,
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Ekatrinburg",
+      "username": "nagibator3000",
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     }
   ]

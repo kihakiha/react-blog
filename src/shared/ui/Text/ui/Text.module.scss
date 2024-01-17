@@ -18,6 +18,16 @@
   }
 }
 
+.secondary {
+  .Title {
+    color: var(--secondary-color);
+  }
+  
+  .Text {
+    color: var(--secondary-color);
+  }
+}
+
 .left {
   text-align: left;
 }

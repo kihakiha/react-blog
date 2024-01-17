@@ -6,6 +6,7 @@ import styles from './Text.module.scss';
 export enum ETextTheme {
   PRIMARY = 'primary',
   ERROR = 'error',
+  SECONDARY = 'secondary',
 }
 
 export enum ETextAlign {

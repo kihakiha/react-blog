@@ -16,8 +16,6 @@ export const fetchArticleById = createAsyncThunk<IArticle, string, ThunkConfig<s
       }
       return response.data
     } catch (error) {
-      console.log(error);
-
       return rejectWithValue('Произошла непредвиденная ошибка')
     }
   }

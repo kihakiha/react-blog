@@ -4,7 +4,12 @@ import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userAction } from 'entities/User';
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userAction
+} from 'entities/User';
 import { Button, EButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text'
 import { AppLink } from 'shared/ui/AppLink';
@@ -25,6 +30,11 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData)
   const dispatch = useDispatch()
+
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
+
+  const isAdminPanelAvailable = isAdmin || isManager
 
   const [isAuthModal, setIsAuthModal] = React.useState(false);
 
@@ -67,6 +77,10 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
             triggerBtn={<Avatar size={40} src={authData.avatar} />}
             direction="bottom left"
             items={[
+              ...(isAdminPanelAvailable ? [{
+                content: t('Админка'),
+                href: RoutePaths.admin_panel
+              }] : []),
               {
                 content: t('Профиль'),
                 href: RoutePaths.profile + authData.id
