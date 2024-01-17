@@ -4,8 +4,8 @@ export {
 } from './model/slice/UserSlice';
 
 export {
-  IUser,
-  UserSchema,
+  type IUser,
+  type UserSchema,
   EUserRoles
 } from './model/types/user'
 

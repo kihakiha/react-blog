@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ForibiddenPage } from './ForibiddenPage';
+import ForibiddenPage from './ForibiddenPage';
 
 const meta: Meta<typeof ForibiddenPage> = {
-  title: 'shared/ForibiddenPage',
+  title: 'pages/ForibiddenPage',
   component: ForibiddenPage,
 };
 

@@ -1,11 +1,11 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 export {
-  IArticle,
+  type IArticle,
   EArticleViewType,
   EArticleSortField,
   ETags
 } from './model/types/article'
-export { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
+export { type ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 export {
   getArticleDetailsData,
   getArticleDetailsError,

@@ -3,12 +3,12 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
     "strict": true,
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     // Для абсолютного импорта
     "baseUrl": ".",

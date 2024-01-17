@@ -1,1 +1,1 @@
-export { ISelectOptions, Select } from './ui/Select';
+export { type ISelectOptions, Select } from './ui/Select';
