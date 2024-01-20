@@ -7,6 +7,6 @@ export const VStack = (props: IVStackProps) => {
   const { align = 'start' } = props;
 
   return (
-    <Flex {...props} direction="column" align="start" />
+    <Flex {...props} direction="column" align={align} />
   )
 };

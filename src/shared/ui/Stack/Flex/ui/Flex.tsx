@@ -36,6 +36,7 @@ export interface IFlexProps extends DivProps {
   gap?: number;
   max?: boolean;
 }
+
 export const Flex = (props: IFlexProps) => {
   const {
     className = '',
