@@ -5,7 +5,8 @@ import { Button, EButtonTheme } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
 import { Popover } from 'shared/ui/Popups';
 import notificationsSvg from 'shared/assets/icons/notification.svg'
-
+import { BrowserView, MobileView } from 'react-device-detect';
+import { Drawer } from 'shared/ui/Drawer';
 import styles from './NavbarNotifications.module.scss';
 
 interface INavbarNotificationsProps {
@@ -16,17 +17,42 @@ export const NavbarNotifications = (props: INavbarNotificationsProps) => {
     className = ''
   } = props
 
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
+
+  const onOpenDrawer = React.useCallback(() => {
+    setIsDrawerOpen(true)
+  }, [])
+
+  const onCloseDrawer = React.useCallback(() => {
+    setIsDrawerOpen(false)
+  }, [])
+
+  const triggerBtn = (
+    <Button onClick={onOpenDrawer} theme={EButtonTheme.CLEAR}>
+      <Icon Svg={notificationsSvg} />
+    </Button>
+  )
+
   return (
-    <Popover
-      className={cn(styles.NavbarNotifications, {}, [className])}
-      triggerBtn={(
-        <Button theme={EButtonTheme.CLEAR}>
-          <Icon Svg={notificationsSvg} />
-        </Button>
-      )}
-      direction="bottom left"
-    >
-      <NotificationList className={styles.notifications} />
-    </Popover>
+    <div>
+      <BrowserView>
+        <Popover
+          className={cn(styles.NavbarNotifications, {}, [className])}
+          triggerBtn={triggerBtn}
+          direction="bottom left"
+        >
+          <NotificationList className={styles.notifications} />
+        </Popover>
+      </BrowserView>
+      <MobileView>
+        {triggerBtn}
+        <Drawer
+          isOpen={isDrawerOpen}
+          onClose={onCloseDrawer}
+        >
+          <NotificationList />
+        </Drawer>
+      </MobileView>
+    </div>
   );
 };

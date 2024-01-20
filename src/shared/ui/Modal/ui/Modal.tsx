@@ -1,7 +1,8 @@
 import React, { MutableRefObject } from 'react';
 import { TMods, cn } from 'shared/libs/classNames/classNames';
-
+import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal/Portal';
+
 import styles from './Modal.module.scss';
 
 interface IModalProps {
@@ -12,7 +13,7 @@ interface IModalProps {
   lazy?: boolean;
 }
 
-const ANIMATION_REF = 300;
+const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => {
   const {
@@ -46,13 +47,9 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
       timerRef.current = setTimeout(() => {
         onClose();
         setIsClosing(false);
-      }, ANIMATION_REF);
+      }, ANIMATION_DELAY);
     }
   }, [onClose]);
-
-  const onClickContent = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Убирает закрывание модального окна при клике на контентную область
-  }
 
   const onKeyDown = React.useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -78,10 +75,9 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
   return (
     <Portal>
       <div className={cn(styles.Modal, mods, [className])}>
-        <div className={styles.overlay} onClick={onCloseHandler}>
-          <div className={styles.content} onClick={onClickContent}>
-            {children}
-          </div>
+        <Overlay onClick={onCloseHandler} />
+        <div className={styles.content}>
+          {children}
         </div>
       </div>
     </Portal>
