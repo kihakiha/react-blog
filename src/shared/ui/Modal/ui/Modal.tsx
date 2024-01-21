@@ -1,5 +1,6 @@
-import React, { MutableRefObject } from 'react';
+import React from 'react';
 import { TMods, cn } from 'shared/libs/classNames/classNames';
+import { useModal } from 'shared/libs/hook/useModal';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal/Portal';
 
@@ -13,8 +14,6 @@ interface IModalProps {
   lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 300;
-
 export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => {
   const {
     className = '',
@@ -24,49 +23,20 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
     lazy
   } = props;
 
-  const [isClosing, setIsClosing] = React.useState(false);
-
-  const timerRef = React.useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-  const [isMounted, setIsMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true)
-    }
-  }, [isOpen]);
+  const {
+    isClosing,
+    isMounted,
+    onCloseHandler,
+  } = useModal({
+    animationDelay: 300,
+    onClose,
+    isOpen,
+  });
 
   const mods: TMods = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
   }
-
-  const onCloseHandler = React.useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onKeyDown = React.useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onCloseHandler();
-    }
-  }, [onCloseHandler])
-
-  React.useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown)
-    }
-
-    return () => {
-      clearTimeout(timerRef.current)
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onKeyDown])
 
   if (lazy && !isMounted) {
     return null
