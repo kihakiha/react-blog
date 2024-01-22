@@ -1,9 +1,9 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ETextTheme, Text } from 'shared/ui/Text';
-import { Loader } from 'shared/ui/Loader';
-import { VStack } from 'shared/ui/Stack';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { ETextTheme, Text } from '@/shared/ui/Text';
+import { Loader } from '@/shared/ui/Loader';
+import { VStack } from '@/shared/ui/Stack';
 import { useNotifications } from '../../../api/notificationAPI';
 import styles from './NotificationList.module.scss';
 import { NotificationItem } from '../../NotificationItem/ui/NotificationItem';

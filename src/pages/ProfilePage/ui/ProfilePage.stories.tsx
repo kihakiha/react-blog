@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-
 import { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/StoryBook/StoreDecorator';
-import { ECountry } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
-import avatarImage from 'shared/assets/tests/storybookAvatar.jpg'
+import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
+import { EnumTheme } from '@/app/providers/ThemeProvider';
+
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
+import { ECountry } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
+import avatarImage from '@/shared/assets/tests/storybookAvatar.jpg'
 import ProfilePage from './ProfilePage';
 
 const meta: Meta<typeof ProfilePage> = {

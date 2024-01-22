@@ -1,11 +1,11 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-
-import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
-import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { Button, EButtonTheme, EButtonSize } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/Stack';
+import { cn } from '@/shared/libs/classNames/classNames';
+
+import { LanguageSwitcher } from '@/widgets/LanguageSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { Button, EButtonTheme, EButtonSize } from '@/shared/ui/Button';
+import { VStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import styles from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

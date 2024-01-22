@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
+import { EnumTheme } from '@/app/providers/ThemeProvider';
+
 import AboutPage from './AboutPage';
 
 const meta: Meta<typeof AboutPage> = {

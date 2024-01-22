@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/StoryBook/StoreDecorator';
-import { ECountry } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
-import avatarImage from 'shared/assets/tests/storybookAvatar.jpg'
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
+import { ECountry } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
+import avatarImage from '@/shared/assets/tests/storybookAvatar.jpg'
 import { ProfileCard } from './ProfileCard';
 
 const meta: Meta<typeof ProfileCard> = {

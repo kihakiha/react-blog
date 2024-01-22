@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
-import avatarImg from 'shared/assets/tests/storybookAvatar.jpg'
+import avatarImg from '@/shared/assets/tests/storybookAvatar.jpg'
 
 import { Comment } from './Comment';
 

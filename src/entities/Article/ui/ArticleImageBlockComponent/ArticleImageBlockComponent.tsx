@@ -1,7 +1,7 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { ETextAlign, Text } from 'shared/ui/Text'
-import { ETextSize } from 'shared/ui/Text/ui/Text';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { ETextAlign, Text } from '@/shared/ui/Text'
+import { ETextSize } from '@/shared/ui/Text/ui/Text';
 import { IArticleImageBlock } from '../../model/types/article';
 
 import styles from './ArticleImageBlockComponent.module.scss';

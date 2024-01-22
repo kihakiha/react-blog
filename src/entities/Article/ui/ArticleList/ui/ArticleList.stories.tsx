@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import avatarImg from 'shared/assets/tests/storybookAvatar.jpg'
+import avatarImg from '@/shared/assets/tests/storybookAvatar.jpg'
 import { EArticleViewType, IArticle } from '../../../model/types/article';
 import { ArticleList } from './ArticleList';
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
+import { EnumTheme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
 import { PageError } from './PageError';
 
 const meta: Meta<typeof PageError> = {

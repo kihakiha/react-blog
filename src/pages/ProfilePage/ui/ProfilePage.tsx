@@ -1,10 +1,10 @@
 import React from 'react'
-import { Page } from 'widgets/Page'
-import { VStack } from 'shared/ui/Stack'
-import { EditableProfileCard } from 'features/EditableProfileCard'
 import { useParams } from 'react-router-dom'
-import { ETextTheme, ETextAlign, Text } from 'shared/ui/Text'
 import { useTranslation } from 'react-i18next'
+import { Page } from '@/widgets/Page'
+import { VStack } from '@/shared/ui/Stack'
+import { EditableProfileCard } from '@/features/EditableProfileCard'
+import { ETextTheme, ETextAlign, Text } from '@/shared/ui/Text'
 
 const ProfilePage = () => {
   const { id } = useParams<{ id: string }>()

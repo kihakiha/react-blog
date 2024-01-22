@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { TMods, cn } from 'shared/libs/classNames/classNames';
+import { TMods, cn } from '@/shared/libs/classNames/classNames';
 
 import styles from './Avatar.module.scss';
 

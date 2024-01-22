@@ -1,7 +1,7 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/Text'
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Text } from '@/shared/ui/Text'
 import { IComment } from '../../model/types/comment';
 import { Comment } from '../Comment/Comment'
 

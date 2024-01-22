@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
+import { cn } from '@/shared/libs/classNames/classNames';
 
 import styles from './Loader.module.scss';
 

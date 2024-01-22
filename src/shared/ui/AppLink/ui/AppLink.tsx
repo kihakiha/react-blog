@@ -1,7 +1,7 @@
 import React, { type PropsWithChildren } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-
 import { Link, type LinkProps } from 'react-router-dom';
+import { cn } from '@/shared/libs/classNames/classNames';
+
 import styles from './AppLink.module.scss';
 
 export enum EAppLinkTheme {

@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { IArticle } from 'entities/Article';
-import { ETags, EArticleBlockType } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/StoryBook/StoreDecorator';
+import { IArticle } from '@/entities/Article';
+import { ETags, EArticleBlockType } from '@/entities/Article/model/types/article';
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {

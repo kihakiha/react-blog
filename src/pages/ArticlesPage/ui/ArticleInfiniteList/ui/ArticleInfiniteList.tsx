@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
-import { ArticleList } from 'entities/Article';
-import { Page } from 'widgets/Page';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
-import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { ETextAlign, ETextTheme, Text } from '@/shared/ui/Text'
+import { ArticleList } from '@/entities/Article';
+import { Page } from '@/widgets/Page';
+import { useAppDispatch } from '@/shared/libs/hook/useAppDispatch';
+import { useInitialEffect } from '@/shared/libs/hook/useInitialEffect';
 import { getArticles } from '../../../model/slice/articlePageSlice';
 import { initArticlesPage } from '../../../model/services/initArticlesPage/initArticlesPage';
 import {

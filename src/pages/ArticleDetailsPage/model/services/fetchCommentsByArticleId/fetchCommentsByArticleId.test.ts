@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk'
+import { TestAsyncThunk } from '@/shared/config/tests/testAsyncThunk'
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId'
 
 const data = [

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/StoryBook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 import AddCommentForm from './AddCommentForm';
 
 const meta: Meta<typeof AddCommentForm> = {

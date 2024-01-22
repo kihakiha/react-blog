@@ -1,7 +1,7 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { Card } from 'shared/ui/Card'
-import { Skeleton } from 'shared/ui/Skeleton';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Card } from '@/shared/ui/Card'
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { EArticleViewType } from '../../../model/types/article';
 
 import styles from './ArticleListItem.module.scss';

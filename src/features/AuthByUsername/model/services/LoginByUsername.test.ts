@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { userAction } from 'entities/User'
-import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk'
+import { userAction } from '@/entities/User'
+import { TestAsyncThunk } from '@/shared/config/tests/testAsyncThunk'
 import { loginByUsername } from './LoginByUsername'
 
 describe('LoginByUsername.test', () => {

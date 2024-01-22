@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk'
-import { ECountry } from 'entities/Country'
-import { ECurrency } from 'entities/Currency'
+import { TestAsyncThunk } from '@/shared/config/tests/testAsyncThunk'
+import { ECountry } from '@/entities/Country'
+import { ECurrency } from '@/entities/Currency'
 import { updateProfileData } from './updateProfileData'
 import { ValidateProfileError } from '../../types/editableProfileCardSchema'
 

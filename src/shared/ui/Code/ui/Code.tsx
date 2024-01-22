@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import copyIcon from 'shared/assets/icons/copy.svg'
+import { cn } from '@/shared/libs/classNames/classNames';
+import copyIcon from '@/shared/assets/icons/copy.svg'
 import { Button, EButtonTheme } from '../../Button';
 import { Icon } from '../../Icon';
 

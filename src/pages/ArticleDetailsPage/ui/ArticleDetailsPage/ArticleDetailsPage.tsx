@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
-import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
-import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page';
-import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { ArticleDetails } from '@/entities/Article';
+import { ETextAlign, ETextTheme, Text } from '@/shared/ui/Text'
+import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgets/Page';
+import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ui/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ui/ArticleDetailsComments';

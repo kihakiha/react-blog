@@ -1,10 +1,10 @@
-import { componentRender } from 'shared/config/tests/componentRender'
 import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
-import { IProfile } from 'entities/Profile';
-import { ECurrency } from 'entities/Currency';
-import { ECountry } from 'entities/Country';
-import { $api } from 'shared/api/api';
+import { componentRender } from '@/shared/config/tests/componentRender'
+import { IProfile } from '@/entities/Profile';
+import { ECurrency } from '@/entities/Currency';
+import { ECountry } from '@/entities/Country';
+import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/ProfileSlice';
 import { EditableProfileCard } from './EditableProfileCard'
 

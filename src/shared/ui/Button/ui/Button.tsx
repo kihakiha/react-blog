@@ -1,5 +1,5 @@
 import React, { type ButtonHTMLAttributes, type PropsWithChildren } from 'react';
-import { TMods, cn } from 'shared/libs/classNames/classNames';
+import { TMods, cn } from '@/shared/libs/classNames/classNames';
 
 import styles from './Button.module.scss';
 

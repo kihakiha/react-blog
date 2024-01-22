@@ -1,4 +1,4 @@
-import { IProfile } from 'entities/Profile/model/types/profile';
+import { IProfile } from '@/entities/Profile/model/types/profile';
 
 export interface ProfileSchema {
   data?: IProfile;

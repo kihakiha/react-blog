@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { AppRoutesProps, RouteConfig } from 'shared/config/RouteConfig/RouteConfig'
-import { PageLoader } from 'widgets/PageLoader'
+import { AppRoutesProps, RouteConfig } from '@/shared/config/RouteConfig/RouteConfig'
+import { PageLoader } from '@/widgets/PageLoader'
 import { RequireAuth } from './RequireAuth'
 
 export const AppRouter = React.memo(() => {

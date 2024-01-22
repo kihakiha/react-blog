@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
+import { cn } from '@/shared/libs/classNames/classNames';
 import styles from './Card.module.scss';
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {

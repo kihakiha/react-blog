@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
 
-import avatarImg from 'shared/assets/tests/storybookAvatar.jpg'
+import avatarImg from '@/shared/assets/tests/storybookAvatar.jpg'
 import { CommentsList } from './CommentsList';
 
 const meta: Meta<typeof CommentsList> = {

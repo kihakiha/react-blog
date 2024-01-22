@@ -1,16 +1,16 @@
 import React, { HTMLAttributeAnchorTarget } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/Text'
-import { ETextAlign, ETextSize, ETextTheme } from 'shared/ui/Text/ui/Text';
-import ViewsIcon from 'shared/assets/icons/views.svg'
-import { Icon } from 'shared/ui/Icon';
-import { Card } from 'shared/ui/Card';
-import { Avatar } from 'shared/ui/Avatar';
-import { Button } from 'shared/ui/Button';
 import { useNavigate } from 'react-router-dom';
-import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
-import { AppLink } from 'shared/ui/AppLink';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Text } from '@/shared/ui/Text'
+import { ETextAlign, ETextSize, ETextTheme } from '@/shared/ui/Text/ui/Text';
+import ViewsIcon from '@/shared/assets/icons/views.svg'
+import { Icon } from '@/shared/ui/Icon';
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button } from '@/shared/ui/Button';
+import { RoutePaths } from '@/shared/config/RouteConfig/RouteConfig';
+import { AppLink } from '@/shared/ui/AppLink';
 import {
   EArticleBlockType, EArticleViewType, IArticle, IArticleTextBlock
 } from '../../../model/types/article';

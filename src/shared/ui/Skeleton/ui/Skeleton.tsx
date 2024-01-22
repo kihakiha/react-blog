@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
+import { cn } from '@/shared/libs/classNames/classNames';
 import styles from './Skeleton.module.scss';
 
 interface ISkeletonProps {

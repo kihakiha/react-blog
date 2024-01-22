@@ -1,9 +1,9 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
-import { Page } from 'widgets/Page';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/libs/hook/useAppDispatch';
+import { Page } from '@/widgets/Page';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageReducer } from '../../model/slice/articlePageSlice';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ui/ArticlesPageFilters';

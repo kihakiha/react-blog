@@ -2,6 +2,6 @@ import React from 'react'
 
 import { StoryFn } from '@storybook/react';
 
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 export const StyleDecorator = (StoryComponent: StoryFn) => <StoryComponent />;

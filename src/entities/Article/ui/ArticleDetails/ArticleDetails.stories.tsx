@@ -1,11 +1,10 @@
 import React from 'react'
 
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-
 import { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
+import { EnumTheme } from '@/app/providers/ThemeProvider';
 
-import { StoreDecorator } from 'shared/config/StoryBook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 import { EArticleBlockType, ETags, IArticle } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 

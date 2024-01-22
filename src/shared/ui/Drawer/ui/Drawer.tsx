@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import { TMods, cn } from 'shared/libs/classNames/classNames';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { useModal } from 'shared/libs/hook/useModal';
-import { useAnimationsLibs } from 'shared/libs/components/AnimationProvider';
+import { TMods, cn } from '@/shared/libs/classNames/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useModal } from '@/shared/libs/hook/useModal';
+import { useAnimationsLibs } from '@/shared/libs/components/AnimationProvider';
 import { Portal } from '../../Portal/Portal';
 import { Overlay } from '../../Overlay';
 import styles from './Drawer.module.scss';

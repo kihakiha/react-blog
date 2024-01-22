@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
-import { Button } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { getArticleDetailsData } from 'entities/Article';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { RoutePaths } from '@/shared/config/RouteConfig/RouteConfig';
+import { Button } from '@/shared/ui/Button';
+import { getUserAuthData } from '@/entities/User';
+import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../../model/selectors/article/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
 

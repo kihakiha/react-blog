@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
-import { EnumTheme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/StoryBook/ThemeDecorator';
-import { StoreDecorator } from 'shared/config/StoryBook/StoreDecorator';
+import { EnumTheme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 import { Navbar } from './Navbar';
 
 const meta: Meta<typeof Navbar> = {

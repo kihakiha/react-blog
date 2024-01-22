@@ -1,8 +1,8 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { Button, EButtonTheme } from 'shared/ui/Button/ui/Button';
-
 import { useTranslation } from 'react-i18next';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Button, EButtonTheme } from '@/shared/ui/Button/ui/Button';
+
 import styles from './PageError.module.scss';
 
 interface IPageErrorProps {

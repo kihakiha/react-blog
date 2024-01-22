@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
+import { cn } from '@/shared/libs/classNames/classNames';
 import { Card, ECardTheme } from '../../Card';
 import styles from './Tabs.module.scss';
 

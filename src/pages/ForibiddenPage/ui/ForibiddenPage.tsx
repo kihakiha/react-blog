@@ -1,8 +1,8 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page';
-import { ETextTheme, Text } from 'shared/ui/Text'
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Page } from '@/widgets/Page';
+import { ETextTheme, Text } from '@/shared/ui/Text'
 import styles from './ForibiddenPage.module.scss';
 
 interface IForibiddenPageProps {

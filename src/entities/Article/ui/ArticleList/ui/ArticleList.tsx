@@ -1,7 +1,7 @@
 import React, { HTMLAttributeAnchorTarget } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ETextAlign, ETextTheme, Text } from 'shared/ui/Text'
+import { cn } from '@/shared/libs/classNames/classNames';
+import { ETextAlign, ETextTheme, Text } from '@/shared/ui/Text'
 import { EArticleViewType, IArticle } from '../../../model/types/article';
 import { ArticleListItem } from '../../ArticleListItem/ui/ArticleListItem';
 import styles from './ArticleList.module.scss';

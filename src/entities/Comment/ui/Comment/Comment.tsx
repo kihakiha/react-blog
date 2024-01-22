@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Avatar } from 'shared/ui/Avatar';
-import { Text } from 'shared/ui/Text'
-import { ETextSize } from 'shared/ui/Text/ui/Text';
-import { Skeleton } from 'shared/ui/Skeleton';
-import { AppLink } from 'shared/ui/AppLink';
-import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Text } from '@/shared/ui/Text'
+import { ETextSize } from '@/shared/ui/Text/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePaths } from '@/shared/config/RouteConfig/RouteConfig';
 import { IComment } from '../../model/types/comment';
 
 import styles from './Comment.module.scss';

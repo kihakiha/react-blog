@@ -1,7 +1,7 @@
 import React, { Fragment, ReactNode } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { Menu } from '@headlessui/react';
-import { TDropDownDirection } from 'shared/types/ui';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { TDropDownDirection } from '@/shared/types/ui';
 import { AppLink } from '../../../../AppLink';
 import { mapDirectionClass } from '../../../styles/consts';
 

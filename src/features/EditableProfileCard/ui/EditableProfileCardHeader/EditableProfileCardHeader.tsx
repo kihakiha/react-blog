@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
-import { Button, EButtonTheme } from 'shared/ui/Button';
-import { HStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { getUserAuthData } from '@/entities/User';
+import { useAppDispatch } from '@/shared/libs/hook/useAppDispatch';
+import { Button, EButtonTheme } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/UpdateProfileData/updateProfileData';

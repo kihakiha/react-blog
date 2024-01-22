@@ -1,12 +1,12 @@
 import React, { MutableRefObject, ReactNode, UIEvent } from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { useInfiniteScroll } from 'shared/libs/hook/useInfiniteScroll';
-import { useAppDispatch } from 'shared/libs/hook/useAppDispatch';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { useInitialEffect } from 'shared/libs/hook/useInitialEffect';
-import { useThrottle } from 'shared/libs/hook/useThrottle';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { useInfiniteScroll } from '@/shared/libs/hook/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/libs/hook/useAppDispatch';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useInitialEffect } from '@/shared/libs/hook/useInitialEffect';
+import { useThrottle } from '@/shared/libs/hook/useThrottle';
 import styles from './Page.module.scss';
 import { ScrollRestorationAction } from '../ScrollRestoration/model/slice/ScrollRestorationSlice';
 import { getScroll, getScrollByPath } from '../ScrollRestoration/model/selectors/ScrollRestorationSelectors';

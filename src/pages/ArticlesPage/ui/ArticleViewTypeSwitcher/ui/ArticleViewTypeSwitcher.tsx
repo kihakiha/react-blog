@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { EArticleViewType } from 'entities/Article';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { EArticleViewType } from '@/entities/Article';
 
-import ViewTypeListIcon from 'shared/assets/icons/ListSquareIcon.svg'
-import ViewTypeCellsIcon from 'shared/assets/icons/TiledIcon.svg'
+import ViewTypeListIcon from '@/shared/assets/icons/ListSquareIcon.svg'
+import ViewTypeCellsIcon from '@/shared/assets/icons/TiledIcon.svg'
 
-import { Button, EButtonTheme } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
+import { Button, EButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import styles from './ArticleViewTypeSwitcher.module.scss';
 
 interface IArticleViewTypeSwitcherProps {

@@ -1,10 +1,10 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-
-import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
-import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink';
 import { useTranslation } from 'react-i18next';
+import { cn } from '@/shared/libs/classNames/classNames';
+
+import { getUserAuthData } from '@/entities/User';
+import { AppLink, EAppLinkTheme } from '@/shared/ui/AppLink';
 import { ISidebarItem } from '../../model/types/sidebar';
 import styles from './SidebarItem.module.scss';
 

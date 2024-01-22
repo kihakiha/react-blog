@@ -1,8 +1,8 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { Card, ECardTheme } from 'shared/ui/Card';
-import { Text } from 'shared/ui/Text';
-import { AppLink } from 'shared/ui/AppLink';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { Card, ECardTheme } from '@/shared/ui/Card';
+import { Text } from '@/shared/ui/Text';
+import { AppLink } from '@/shared/ui/AppLink';
 import { INotification } from '../../../model/types/notification';
 import styles from './NotificationItem.module.scss';
 

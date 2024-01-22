@@ -1,8 +1,8 @@
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
-import { StateSchema, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 import React, { PropsWithChildren } from 'react';
 import { useStore } from 'react-redux';
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
+import { StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 import { useAppDispatch } from '../../hook/useAppDispatch';
 
 export type ReducersList = {

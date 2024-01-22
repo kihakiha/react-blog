@@ -1,13 +1,13 @@
 import React from 'react';
-import { cn } from 'shared/libs/classNames/classNames';
-import { NotificationList } from 'entities/Notification';
-import { Button, EButtonTheme } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
-import { Popover } from 'shared/ui/Popups';
-import notificationsSvg from 'shared/assets/icons/notification.svg'
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Drawer } from 'shared/ui/Drawer';
-import { AnimationProvider } from 'shared/libs/components/AnimationProvider';
+import { cn } from '@/shared/libs/classNames/classNames';
+import { NotificationList } from '@/entities/Notification';
+import { Button, EButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { Popover } from '@/shared/ui/Popups';
+import notificationsSvg from '@/shared/assets/icons/notification.svg'
+import { Drawer } from '@/shared/ui/Drawer';
+import { AnimationProvider } from '@/shared/libs/components/AnimationProvider';
 import styles from './NavbarNotifications.module.scss';
 
 interface INavbarNotificationsProps {

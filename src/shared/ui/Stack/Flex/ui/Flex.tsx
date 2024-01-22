@@ -1,5 +1,5 @@
 import React, { CSSProperties, ReactNode } from 'react';
-import { TMods, cn } from 'shared/libs/classNames/classNames';
+import { TMods, cn } from '@/shared/libs/classNames/classNames';
 import styles from './Flex.module.scss';
 
 type FlexJustify = 'start' | 'center' | 'end' | 'between' | 'around';

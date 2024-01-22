@@ -1,6 +1,6 @@
 import React from 'react';
-import { TMods, cn } from 'shared/libs/classNames/classNames';
-import { useModal } from 'shared/libs/hook/useModal';
+import { TMods, cn } from '@/shared/libs/classNames/classNames';
+import { useModal } from '@/shared/libs/hook/useModal';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal/Portal';
 

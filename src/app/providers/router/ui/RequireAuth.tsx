@@ -1,9 +1,9 @@
 import React from 'react'
-import { EUserRoles, getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePaths } from 'shared/config/RouteConfig/RouteConfig';
-import { getUserRoles } from 'entities/User/model/selectors/getUserRoles/getUserRoles';
+import { EUserRoles, getUserAuthData } from '@/entities/User';
+import { getUserRoles } from '@/entities/User/model/selectors/getUserRoles/getUserRoles';
+import { RoutePaths } from '@/shared/config/RouteConfig/RouteConfig';
 
 interface IRequireAuth {
   children: JSX.Element,

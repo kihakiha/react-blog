@@ -1,5 +1,5 @@
 import React from 'react';
-import { TMods, cn } from 'shared/libs/classNames/classNames';
+import { TMods, cn } from '@/shared/libs/classNames/classNames';
 
 import styles from './Text.module.scss';
 

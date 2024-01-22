@@ -59,6 +59,17 @@ module.exports = {
     'max-len': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'react/no-array-index-key': 'off',
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ],
     'i18next/no-literal-string': [
       'warn',
       {
