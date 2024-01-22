@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { TMods, cn } from '@/shared/libs/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { useModal } from '@/shared/libs/hook/useModal';
-import { useAnimationsLibs } from '@/shared/libs/components/AnimationProvider';
+import { AnimationProvider, useAnimationsLibs } from '@/shared/libs/components/AnimationProvider';
 import { Portal } from '../../Portal/Portal';
 import { Overlay } from '../../Overlay';
 import styles from './Drawer.module.scss';
@@ -118,7 +118,7 @@ export const DrawerContent = (props: IDrawerProps) => {
   );
 };
 
-export const Drawer = React.memo((props: IDrawerProps) => {
+const DrawerAsync = (props: IDrawerProps) => {
   const {
     isLoaded
   } = useAnimationsLibs();
@@ -128,4 +128,10 @@ export const Drawer = React.memo((props: IDrawerProps) => {
   }
 
   return <DrawerContent {...props} />
-})
+}
+
+export const Drawer = (props: IDrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+)
