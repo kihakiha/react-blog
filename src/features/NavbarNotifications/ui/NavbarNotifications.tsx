@@ -7,6 +7,7 @@ import { Popover } from 'shared/ui/Popups';
 import notificationsSvg from 'shared/assets/icons/notification.svg'
 import { BrowserView, MobileView } from 'react-device-detect';
 import { Drawer } from 'shared/ui/Drawer';
+import { AnimationProvider } from 'shared/libs/components/AnimationProvider';
 import styles from './NavbarNotifications.module.scss';
 
 interface INavbarNotificationsProps {
@@ -46,12 +47,14 @@ export const NavbarNotifications = (props: INavbarNotificationsProps) => {
       </BrowserView>
       <MobileView>
         {triggerBtn}
-        <Drawer
-          isOpen={isDrawerOpen}
-          onClose={onCloseDrawer}
-        >
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer
+            isOpen={isDrawerOpen}
+            onClose={onCloseDrawer}
+          >
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </div>
   );

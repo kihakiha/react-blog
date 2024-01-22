@@ -43,7 +43,7 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     'react/require-default-props': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
