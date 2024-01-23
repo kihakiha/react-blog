@@ -1,13 +1,12 @@
 import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
-import { EnumTheme } from '@/app/providers/ThemeProvider';
 
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
-  title: 'shared/ArticleDetailsPageHeader',
+  title: 'pages/ArticleDetails/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
 };
 
@@ -17,3 +16,5 @@ type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 export const Primary: Story = {
   args: {},
 }
+
+Primary.decorators = [StoreDecorator({})]

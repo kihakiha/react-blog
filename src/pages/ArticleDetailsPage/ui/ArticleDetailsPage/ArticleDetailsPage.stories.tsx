@@ -8,7 +8,7 @@ import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
-  title: 'pages/ArticleDetailsPage',
+  title: 'pages/ArticleDetails/ArticleDetailsPage',
   component: ArticleDetailsPage,
 };
 
@@ -97,6 +97,6 @@ export const Primary: Story = {
 
 Primary.decorators = [StoreDecorator({
   articleDetails: {
-    data: articleData
+    data: articleData,
   },
 })]

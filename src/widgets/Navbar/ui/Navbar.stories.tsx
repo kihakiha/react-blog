@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react';
+import avatarImg from 'shared/assets/tests/storybookAvatar.jpg'
 import { EnumTheme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/StoryBook/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
@@ -17,5 +18,5 @@ type Story = StoryObj<typeof Navbar>;
 export const Light: Story = {}
 export const Dark: Story = {}
 Dark.decorators = [ThemeDecorator(EnumTheme.DARK)]
-Light.decorators = [StoreDecorator({ user: { authData: { id: '1', username: 'username' } } })]
-Dark.decorators = [StoreDecorator({ user: { authData: { id: '1', username: 'username' } } })]
+Light.decorators = [StoreDecorator({ user: { authData: { id: '1', username: 'username', avatar: avatarImg } } })]
+Dark.decorators = [StoreDecorator({ user: { authData: { id: '1', username: 'username', avatar: avatarImg } } })]

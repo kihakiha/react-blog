@@ -3,9 +3,10 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react';
 
 import ArticleEditPage from './ArticleEditPage';
+import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 
 const meta: Meta<typeof ArticleEditPage> = {
-  title: 'shared/ArticleEditPage',
+  title: 'pages/ArticleEditPage',
   component: ArticleEditPage,
 };
 
@@ -15,3 +16,5 @@ type Story = StoryObj<typeof ArticleEditPage>;
 export const Primary: Story = {
   args: {},
 }
+
+Primary.decorators = [StoreDecorator({})]
