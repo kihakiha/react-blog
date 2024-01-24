@@ -29,7 +29,7 @@ export const Popover = (props: IPopoverProps) => {
     <HPopover
       className={cn(styles.Popover, {}, [className, popupStyles.popup])}
     >
-      <HPopover.Button className={popupStyles.trigger}>
+      <HPopover.Button as="div" className={popupStyles.trigger}>
         {triggerBtn}
       </HPopover.Button>
 

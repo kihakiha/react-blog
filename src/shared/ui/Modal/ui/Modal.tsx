@@ -10,8 +10,9 @@ interface IModalProps {
   className?: string;
   children?: React.ReactNode;
   isOpen?: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   lazy?: boolean;
+  center?: boolean;
 }
 
 export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => {
@@ -20,7 +21,8 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
     children,
     isOpen = false,
     onClose,
-    lazy
+    lazy,
+    center = false
   } = props;
 
   const {
@@ -36,6 +38,7 @@ export const Modal: React.FC<React.PropsWithChildren<IModalProps>> = (props) => 
   const mods: TMods = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
+    [styles.center]: center,
   }
 
   if (lazy && !isMounted) {

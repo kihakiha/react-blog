@@ -53,6 +53,7 @@ export const ListBox = (props: IListBoxProps) => {
       </HListBox.Label>
       <HListBox.Button
         className={popupStyles.trigger}
+        as="div"
       >
         <Button disabled={readonly} className={styles.Button}>
           {value ?? defaultValue}
