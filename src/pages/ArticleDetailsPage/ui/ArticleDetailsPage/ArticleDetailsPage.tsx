@@ -10,6 +10,7 @@ import { ArticleRecommendationList } from '@/features/ArticleRecommendationList'
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ui/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ui/ArticleDetailsComments';
+import { ArticleRating } from '@/features/ArticleRating';
 
 import styles from './ArticleDetailsPage.module.scss';
 
@@ -40,6 +41,7 @@ const ArticleDetailsPage = ({ className = '' }: IArticleDetailsPageProps) => {
         <ArticleDetailsPageHeader />
         <ArticleDetails articleId={id} />
         <ArticleRecommendationList />
+        <ArticleRating articleId={id} className={styles.rating} />
         <ArticleDetailsComments articleId={id} className={styles.commentTitle} />
       </Page>
     </DynamicModuleLoader>

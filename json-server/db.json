@@ -594,21 +594,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     },
     {
       "id": "2",
       "username": "kissel0104",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     },
     {
       "id": "3",
       "username": "nagibator3000",
       "password": "1234",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
     }
   ],
@@ -645,6 +651,52 @@
       "city": "Ekatrinburg",
       "username": "nagibator3000",
       "avatar": "https://1.gravatar.com/avatar/e0f1457ef1f29763dadf2209713283597f0ab4082ff99870b5d2f69d8f723326?size=256"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья!",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Отличная статья!",
+      "userId": "2",
+      "articleId": "1"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 4,
+      "feedback": "супер",
+      "id": "adcrkyL"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "ну такое",
+      "id": "8fKljND"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Норм",
+      "userId": "1",
+      "profileId": "3"
+    },
+    {
+      "id": "2",
+      "rate": 1,
+      "feedback": "Аморал!",
+      "userId": "2",
+      "profileId": "3"
     }
   ]
 }

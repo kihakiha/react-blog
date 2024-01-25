@@ -22,7 +22,7 @@ export const StarRating = (props: IStarRatingProps) => {
     selectedStars = 0,
   } = props
 
-  const [currentStarsCount, setCurrentStarsCount] = React.useState(0);
+  const [currentStarsCount, setCurrentStarsCount] = React.useState(selectedStars);
   const [isSelected, setIsSelected] = React.useState(Boolean(selectedStars));
 
   const onHover = (starsCount: number) => () => {

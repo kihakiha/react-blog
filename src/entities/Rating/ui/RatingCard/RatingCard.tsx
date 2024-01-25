@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { cn } from '@/shared/libs/classNames/classNames';
 import { Card } from '@/shared/ui/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
@@ -11,8 +10,6 @@ import { Input } from '@/shared/ui/Input';
 import { Button, EButtonTheme } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 
-import styles from './RatingCard.module.scss';
-
 interface IRatingCardProps {
   className?: string;
   title?: string;
@@ -20,6 +17,7 @@ interface IRatingCardProps {
   hasFeedback?: boolean;
   onCancel?: (starsCount: number) => void;
   onAccept?: (starsCount: number, feedback?: string) => void;
+  rate?: number;
 }
 
 export const RatingCard = (props: IRatingCardProps) => {
@@ -30,12 +28,13 @@ export const RatingCard = (props: IRatingCardProps) => {
     hasFeedback,
     onCancel,
     onAccept,
+    rate = 0,
   } = props
 
   const { t } = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [starsCount, setStarsCount] = React.useState(0);
+  const [starsCount, setStarsCount] = React.useState(rate);
   const [feedback, setFeedback] = React.useState('');
 
   const onSelectStars = React.useCallback((selectedStarsCount: number) => {
@@ -65,10 +64,10 @@ export const RatingCard = (props: IRatingCardProps) => {
   );
 
   return (
-    <Card className={cn(styles.RatingCard, {}, [className])}>
+    <Card className={className}>
       <VStack gap={8} align="center">
-        <Text title={title} />
-        <StarRating onSelect={onSelectStars} />
+        <Text title={starsCount ? t('Спасибо за оценку!') : title} />
+        <StarRating selectedStars={starsCount} onSelect={onSelectStars} />
       </VStack>
       <BrowserView>
         <Modal center isOpen={isModalOpen} lazy>
