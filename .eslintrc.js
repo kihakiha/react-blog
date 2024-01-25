@@ -78,7 +78,7 @@ module.exports = {
       },
     ],
     'linebreak-style': 'off',
-    'kihakiha-plugin/path-checker': 'error',
+    'kihakiha-plugin/path-checker': ['error', {alias: '@'}],
   },
   globals: {
     __IS_DEV__: true,

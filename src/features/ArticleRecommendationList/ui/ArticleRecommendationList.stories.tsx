@@ -6,7 +6,7 @@ import { ArticleRecommendationList } from './ArticleRecommendationList';
 import { StoreDecorator } from '@/shared/config/StoryBook/StoreDecorator';
 
 const meta: Meta<typeof ArticleRecommendationList> = {
-  title: 'features/ArticleRecommendationList',
+  title: 'features/ArticleDetails/ArticleRecommendationList',
   component: ArticleRecommendationList,
 };
 
